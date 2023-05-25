@@ -1,0 +1,186 @@
+.vertical-timeline {
+    width: 100%;
+    position: relative;
+    padding: 1.5rem 0 1rem;
+ }
+ 
+ .vertical-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 67px;
+    height: 100%;
+    width: 4px;
+    background: #e9ecef;
+    border-radius: .25rem;
+ }
+ 
+ .vertical-timeline-element {
+    position: relative;
+    margin: 0 0 1rem;
+ }
+ 
+ .vertical-timeline--animate .vertical-timeline-element-icon.bounce-in {
+    visibility: visible;
+    animation: cd-bounce-1 .8s;
+ }
+ .vertical-timeline-element-icon {
+    position: absolute;
+    top: 0;
+    left: 50px;
+ }
+ 
+ .vertical-timeline-element-icon .badge-dot-xl {
+    box-shadow: 0 0 0 5px #fff;
+ }
+ 
+ .badge-dot-xl {
+    width: 22px;
+    height: 22px;
+    position: relative;
+ }
+ .badge:empty {
+    display: inline-block;
+ }
+ 
+ 
+ .badge-dot-xl::before {
+    content: '';
+    /* width: 10px;
+    height: 10px; */
+    /* border-radius: .25rem; */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -5px 0 0 -5px;
+    background: #fff;
+ }
+ 
+ .vertical-timeline-element-content {
+    position: relative;
+    margin-left: 90px;
+    font-size: .8rem;
+ }
+ 
+ .vertical-timeline-element-content .timeline-title {
+    font-size: .8rem;
+    text-transform: uppercase;
+    margin: 0 0 .5rem;
+    padding: 2px 0 0;
+    font-weight: bold;
+    cursor: pointer;
+ }
+ 
+ .vertical-timeline-element-content .vertical-timeline-element-date {
+    display: block;
+    position: absolute;
+    left: -90px;
+    top: 0;
+    padding-right: 10px;
+    text-align: right;
+    color: #adb5bd;
+    font-size: .7619rem;
+    white-space: nowrap;
+    cursor: pointer;
+ }
+ 
+ .vertical-timeline-element-content:after {
+    content: "";
+    display: table;
+    clear: both;
+ }
+ 
+ .timelineIcon{
+     background-color: #fff;
+     height: 1.5rem;
+ }
+ 
+   .i-zondicons-education {
+ 
+     --un-icon: url("data:image/svg+xml;utf8,%3Csvg viewBox='0 0 20 20' width='1.2em' height='1.2em' xmlns='http://www.w3.org/2000/svg' %3E%3Cpath fill='currentColor' d='M3.33 8L10 12l10-6l-10-6L0 6h10v2H3.33zM0 8v8l2-2.22V9.2L0 8zm10 12l-5-3l-2-1.2v-6l7 4.2l7-4.2v6L10 20z'/%3E%3C/svg%3E");
+   -webkit-mask: var(--un-icon) no-repeat;
+   /* mask: var(--un-icon) no-repeat; */
+   -webkit-mask-size: 100% 100%;
+   mask-size: 100% 100%;
+   background-color: currentColor;
+   color: inherit;
+   /* width: 1.2em; */
+   height: 0.6em;
+   }
+   .i-clarity-employee-solid {
+     --un-icon: url("data:image/svg+xml;utf8,%3Csvg viewBox='0 0 36 36' width='1.2em' height='1.2em' xmlns='http://www.w3.org/2000/svg' %3E%3Cg id='clarityEmployeeSolid0' fill='currentColor'%3E%3Ccircle cx='16.86' cy='9.73' r='6.46'/%3E%3Cpath d='M21 28h7v1.4h-7z'/%3E%3Cpath d='M15 30v3a1 1 0 0 0 1 1h17a1 1 0 0 0 1-1V23a1 1 0 0 0-1-1h-7v-1.47a1 1 0 0 0-2 0V22h-2v-3.58a32.12 32.12 0 0 0-5.14-.42a26 26 0 0 0-11 2.39a3.28 3.28 0 0 0-1.88 3V30Zm17 2H17v-8h7v.42a1 1 0 0 0 2 0V24h6Z'/%3E%3C/g%3E%3C/svg%3E");
+     -webkit-mask: var(--un-icon) no-repeat;
+     /* mask: var(--un-icon) no-repeat; */
+     -webkit-mask-size: 100% 100%;
+     mask-size: 100% 100%;
+     background-color: currentColor;
+     color: inherit;
+     /* width: 1.2em; */
+     height: 0.6em;
+   }
+   .timeLine{
+     margin-top: 1rem;
+   }
+ 
+ /* timeline slow loader*/
+  /* @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .slow-load .element {
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out;
+    animation-fill-mode: forwards;
+  }
+  
+  .slow-load .element:nth-child(1) {
+    animation-delay: 0s;
+  }
+  
+  .slow-load .element:nth-child(2) {
+    animation-delay: 1s;
+  }
+  
+  .slow-load .element:nth-child(3) {
+    animation-delay: 2s;
+  }
+  
+  .slow-load .element:last-child {
+    animation-delay: 3s;
+  }
+   */
+   @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .slow-load .element {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeIn 1s ease-in-out;
+    animation-fill-mode: forwards;
+  }
+  
+  .slow-load .element:nth-child(1) {
+    animation-delay: 0s;
+  }
+  
+  .slow-load .element:nth-child(2) {
+    animation-delay: 0.5s;
+  }
+  
+  .slow-load .element:nth-child(3) {
+    animation-delay: 1s;
+  }
+  

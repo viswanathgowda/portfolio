@@ -1,0 +1,70 @@
+<div class="projects">
+<div class="containerProjectsHeader">
+    <h2 class="containerProjectsTitle">real time projects</h2>
+    <p class="containerProjectsDes">all these projects are developed by my self</p>
+</div>
+
+<div class="carousel">
+    <div class="carousel-inner" #carouselContainer id="carouselContainer">
+
+        <div *ngFor="let card of projects; let i = index;" class="carousel-item"
+            [ngClass]="{'active': i >= currentIndex && i < currentIndex + 4}">
+
+            <div class="containerCard" id="containerCard">
+                <div class="card">
+                    <div class="cardHeader">
+                        <div class="cardTitle">
+                            <h3>{{card.title}}</h3>
+                        </div>
+                        <div class="cardIcons">
+                            <a [attr.href]="card.github" class="i-radix-icons-github-logo githubIcon" target="_blank"></a>
+                            <a [attr.href]="card.demo" class="i-material-symbols-open-in-new openInNewIcon"
+                                target="_blank"></a>
+                        </div>
+                    </div>
+                    <div class="cardBody">
+                        <iframe [src]="card.demo | safeUrl" width = "100%" height="300" frameborder="0" loading="lazy" allowtransparency="true" allowfullscreen="true"></iframe>
+                    </div>
+                    <div class="cardFooter">
+                        <p class="cardFooterDes">{{card.description}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <a class="carousel-control-prev" href="#" role="button" (click)="moveLeft()">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <!-- <span class="sr-only">Previous</span> -->
+    </a>
+    <a class="carousel-control-next" href="#" role="button" (click)="moveRight()">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <!-- <span class="sr-only">Next</span> -->
+    </a>
+</div>
+</div>
+
+
+
+
+<!-- 
+<div class="containerCard" id="containerCard">
+    <div class="card">
+        <div class="cardHeader">
+            <div class="cardTitle">
+                <h3>{{title}}</h3>
+            </div>
+            <div class="cardIcons">
+                <a [attr.href]="github" class="i-radix-icons-github-logo githubIcon" target="_blank"></a>
+                <a [attr.href]="demo" class="i-material-symbols-open-in-new openInNewIcon" target="_blank"></a>
+            </div>
+        </div>
+        <div class="cardBody">
+            <iframe [src]="safeUrl" frameborder="0" width="100%" height="300"></iframe>
+        </div>
+        <div class="cardFooter">
+            <p class="cardFooterDes">{{description}}</p>
+        </div>
+    </div>
+</div> -->

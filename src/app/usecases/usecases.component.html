@@ -1,0 +1,20 @@
+<div class="usecases">
+    <div class="containerUsecaseHeader">
+        <h2 class="containerUsecaseTitle">Use cases</h2>
+        <p class="containerUsecaseDes">all these usecases are developed by my self</p>
+    </div>
+    <div class="usecaseCards">
+    <div *ngFor="let card of usecases">
+    <div class="card">
+        <div class="card-image">
+            <iframe [src]="card.demo | safeUrl" width = "100%" height="300" scrolling="no" frameborder="0" loading="lazy" allowtransparency="true" allowfullscreen="true"></iframe>
+        </div>
+          <div class="card-description">
+            <p class="text-title">{{card.title}}</p>
+            <p class="text-body">{{card.description}}</p>
+          </div>
+    </div>
+    </div>
+</div>
+
+</div>
