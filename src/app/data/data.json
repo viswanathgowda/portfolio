@@ -1,0 +1,78 @@
+{
+    "basicDeatails": {
+      "name": "M Viswanath Gowda",
+      "email": "viswavishu40.com",
+      "phone": "(+91) 9 8 8 8 8",
+      "address": "Mumbai, Maharashtra",
+      "website": "viswavishu40.com",
+      "github": "viswavishu40",
+      "linkedin": "viswavishu40",
+      "twitter": "viswavish"
+    },
+    "education": {
+      "jobtitle": "ASE",
+      "jobTooltip": "Associate Software Engineer",
+      "jobrole" : "Angular Developer",
+      "company": "Isteer Technologies PVt Ltd",
+      "companywebsite": "https://sites.google.com/isteer.com/isteer-employee-portal/home?authuser=0",
+      "experience": "1yr 6mo"
+    },
+    "aboutme": {
+      "des": "Have progressive experience in Information Technology and has been involved in the Design and Development of enterprise integration projects. Strong in design and integration with intuitive problem-solving skills, Passionate about implementing and launching new projects, Ability to translate business requirements into technical solutions.",
+      "skills": {
+        "languages": [
+          {
+            "web":
+              [
+                { "title": "HTML", "subtitle": "HTML5", "des": "html des", "icon": "i-devicon-html5-wordmark" },
+                { "title": "CSS", "subtitle": "CSS", "des": "CSS des", "icon": "i-devicon-css3-wordmark" },
+                { "title": "JavaScript", "subtitle": "JavaScript", "des": "Javascript des", "icon": "i-logos-javascript" },
+                { "title": "TypeScript", "subtitle": "TypeScript", "des": "typescript des", "icon": "i-vscode-icons-file-type-typescript-official" },
+                { "title": "AngularJs", "subtitle":"AngularJs", "des": "AngularJs des", "icon":"i-devicon-angularjs-wordmark" },
+                { "title": "Angular2+", "subtitle": "Angular2+ versions", "des": "angular2+ des", "icon": "i-vscode-icons-file-type-angular" }
+              ]
+          },
+          {
+            "backend": []
+          },
+          {
+            "testing": [
+              {"title": "Manual", "subtitle": "Manual Testing", "des": "Manual Testing des", "img": "/src/assets/software-testing.png"},
+              {"title": "Cypress", "subtitle":"Cypress Automation Testing", "des": "Cypress Automation Testing", "icon": "i-logos-cypress-icon"}
+            ]
+          }
+        ]
+      }
+    },
+    "projects": [
+      { "title": "weatherApp", "github": "", "demo": "https://viswanathgowda.github.io/weatherApplication/", "description": "its a basic weather application which used google cloud and weather apis" },
+      { "title": "calculatorApp", "github": "", "demo": "https://primeng.org/timeline", "description": "its a basic weather application which used google cloud and weather apis, its a basic weather application which used google cloud and weather apis" },
+      { "title": "calculatorApp", "github": "", "demo": "https://primeng.org/timeline", "description": "its a basic weather application which used google cloud and weather apis, its a basic weather application which used google cloud and weather apis" },
+      { "title": "calculatorApp", "github": "", "demo": "https://primeng.org/timeline", "description": "its a basic weather application which used google cloud and weather apis, its a basic weather application which used google cloud and weather apis" },
+      { "title": "calculatorApp", "github": "", "demo": "https://primeng.org/timeline", "description": "its a basic weather application which used google cloud and weather apis, its a basic weather application which used google cloud and weather apis" },
+      { "title": "calculatorApp", "github": "", "demo": "https://primeng.org/timeline", "description": "its a basic weather application which used google cloud and weather apis, its a basic weather application which used google cloud and weather apis" },
+      { "title": "calculatorApp", "github": "", "demo": "https://primeng.org/timeline", "description": "its a basic weather application which used google cloud and weather apis, its a basic weather application which used google cloud and weather apis" },
+      { "title": "calculatorApp", "github": "", "demo": "https://primeng.org/timeline", "description": "its a basic weather application which used google cloud and weather apis, its a basic weather application which used google cloud and weather apis" },
+      { "title": "calculatorApp", "github": "", "demo": "https://primeng.org/timeline", "description": "its a basic weather application which used google cloud and weather apis, its a basic weather application which used google cloud and weather apis" },
+      { "title": "calculatorApp", "github": "", "demo": "https://primeng.org/timeline", "description": "its a basic weather application which used google cloud and weather apis, its a basic weather application which used google cloud and weather apis" },
+      { "title": "calculatorApp", "github": "", "demo": "https://primeng.org/timeline", "description": "its a basic weather application which used google cloud and weather apis, its a basic weather application which used google cloud and weather apis" },
+      { "title": "calculatorApp", "github": "", "demo": "https://primeng.org/timeline", "description": "its a basic weather application which used google cloud and weather apis, its a basic weather application which used google cloud and weather apis" },
+      { "title": "calculatorApp", "github": "", "demo": "https://primeng.org/timeline", "description": "its a basic weather application which used google cloud and weather apis, its a basic weather application which used google cloud and weather apis" },
+      { "title": "calculatorApp", "github": "", "demo": "https://primeng.org/timeline", "description": "its a basic weather application which used google cloud and weather apis, its a basic weather application which used google cloud and weather apis" },
+      { "title": "calculatorApp", "github": "", "demo": "https://primeng.org/timeline", "description": "its a basic weather application which used google cloud and weather apis, its a basic weather application which used google cloud and weather apis" },
+      { "title": "calculatorApp", "github": "", "demo": "https://primeng.org/timeline", "description": "its a basic weather application which used google cloud and weather apis, its a basic weather application which used google cloud and weather apis" }
+
+    ],
+    "usecases" :[
+      { "title": "calculatorApp", "lang": "", "demo": "https://codepen.io/MATTA-VISWANADHGOWD/embed/wvryjVq?default-tab=html%2Cresult", "description": "its a basic weather application which used google cloud and weather apis, its a basic weather application which used google cloud and weather apis" },
+      { "title": "calculatorApp", "lang": "", "demo": "https://codepen.io/MATTA-VISWANADHGOWD/embed/wvryjVq?default-tab=html%2Cresult", "description": "its a basic weather application which used google cloud and weather apis, its a basic weather application which used google cloud and weather apis" },
+      { "title": "calculatorApp", "lang": "", "demo": "https://codepen.io/MATTA-VISWANADHGOWD/embed/wvryjVq?default-tab=html%2Cresult", "description": "its a basic weather application which used google cloud and weather apis, its a basic weather application which used google cloud and weather apis" },
+      { "title": "calculatorApp", "lang": "", "demo": "https://codepen.io/MATTA-VISWANADHGOWD/embed/wvryjVq?default-tab=html%2Cresult", "description": "its a basic weather application which used google cloud and weather apis, its a basic weather application which used google cloud and weather apis" },
+      { "title": "calculatorApp", "lang": "", "demo": "https://codepen.io/MATTA-VISWANADHGOWD/embed/wvryjVq?default-tab=html%2Cresult", "description": "its a basic weather application which used google cloud and weather apis, its a basic weather application which used google cloud and weather apis" },
+      { "title": "calculatorApp", "lang": "", "demo": "https://codepen.io/MATTA-VISWANADHGOWD/embed/wvryjVq?default-tab=html%2Cresult", "description": "its a basic weather application which used google cloud and weather apis, its a basic weather application which used google cloud and weather apis" },
+      { "title": "calculatorApp", "lang": "", "demo": "https://codepen.io/MATTA-VISWANADHGOWD/embed/wvryjVq?default-tab=html%2Cresult", "description": "its a basic weather application which used google cloud and weather apis, its a basic weather application which used google cloud and weather apis" },
+      { "title": "calculatorApp", "lang": "", "demo": "https://codepen.io/MATTA-VISWANADHGOWD/embed/wvryjVq?default-tab=html%2Cresult", "description": "its a basic weather application which used google cloud and weather apis, its a basic weather application which used google cloud and weather apis" }
+
+   ]
+
+  }
