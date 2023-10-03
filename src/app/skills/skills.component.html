@@ -13,9 +13,10 @@
         <div *ngFor="let card of skillSet">
             <div class="card">
                 <div class="card-front">
-                    <div class="{{card.icon}} cardIcon"></div>
+                    <div class="{{card.icon}} cardIcon" ></div>
+                    <img *ngIf="!card.icon" class="cardIcon" src="/src/assets/software-testing.png">
                     <p class="title">{{card.title}}</p>
-                    <p class="subtitle">Web Dev</p>
+                    <p class="subtitle">{{card.subtitle}}</p>
                 </div>
                 <div class="card-back">
                     <p>{{card.des}}</p>

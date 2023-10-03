@@ -4,8 +4,8 @@
     <p class="containerProjectsDes">all these projects are developed by my self</p>
 </div>
 
-<div class="carousel">
-    <div class="carousel-inner" #carouselContainer id="carouselContainer">
+<!-- <div class="carousel"> -->
+    <!-- <div class="carousel-inner" #carouselContainer id="carouselContainer">
 
         <div *ngFor="let card of projects; let i = index;" class="carousel-item"
             [ngClass]="{'active': i >= currentIndex && i < currentIndex + 4}">
@@ -31,22 +31,108 @@
                 </div>
             </div>
         </div>
+    </div> -->
+
+
+    <!-- <a class="carousel-control-prev" href="#" role="button" (click)="moveLeft()">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
+        <!-- <span class="sr-only">Previous</span> -->
+    <!-- </a> -->
+    <!-- <a class="carousel-control-next" href="#" role="button" (click)="moveRight()">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
+        <!-- <span class="sr-only">Next</span> -->
+    <!-- </a> -->
+<!-- </div> -->
+
+
+
+<!-- <div class="carousel">
+    <div class="carousel-inner"  id="carouselContainer">
+
+        <div *ngFor="let card of projects; let i = index;" class="carousel-item"
+            [ngClass]="{'active': i >= currentIndex && i < currentIndex + 4}">
+        {{i}}
+            <div class="containerCard" id="containerCard">
+                <div class="card">
+                    <div class="cardHeader">
+                        <div class="cardTitle">
+                            <h3>{{card.title}}</h3>
+                        </div>
+                        <div class="cardIcons">
+                            <a [attr.href]="card.github" class="i-radix-icons-github-logo githubIcon" target="_blank"></a>
+                            <a [attr.href]="card.demo" class="i-material-symbols-open-in-new openInNewIcon"
+                                target="_blank"></a>
+                        </div>
+                    </div>
+                    <div class="cardBody">
+                        <iframe [src]="card.demo | safeUrl" width = "100%" height="300" frameborder="0" loading="lazy" allowtransparency="true" allowfullscreen="true"></iframe>
+                    </div>
+                    <div class="cardFooter">
+                        <p class="cardFooterDes">{{card.description}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 
-    <a class="carousel-control-prev" href="#" role="button" (click)="moveLeft()">
+    <a class="carousel-control-prev"  role="button" (click)="moveLeft()">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <!-- <span class="sr-only">Previous</span> -->
     </a>
-    <a class="carousel-control-next" href="#" role="button" (click)="moveRight()">
+    <a class="carousel-control-next" role="button" (click)="moveRight()">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <!-- <span class="sr-only">Next</span> -->
     </a>
 </div>
+</div> -->
+<!-- working one -->
+<div>
+    <!-- <button class="carousel-button prev-button left" (click)="moveLeft()">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </button> -->
+    <div class="wrapper">
+        <div *ngFor="let card of projects">
+
+            <div class="containerCard" id="containerCard">
+                <div class="card">
+                    <div class="cardHeader">
+                        <div class="cardTitle">
+                            <h3>{{card.title}}</h3>
+                        </div>
+                        <div class="cardIcons">
+                            <a [attr.href]="card.github" class="i-radix-icons-github-logo githubIcon"
+                                target="_blank"></a>
+                            <a [attr.href]="card.demo" class="i-material-symbols-open-in-new openInNewIcon"
+                                target="_blank"></a>
+                        </div>
+                    </div>
+                    <div class="cardBody">
+                        <iframe [src]="card.demo | safeUrl" width="100%" height="300" frameborder="0" loading="lazy"
+                            allowtransparency="true" allowfullscreen="true"></iframe>
+                    </div>
+                    <div class="cardFooter">
+                        <p class="cardFooterDes">{{card.description}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <button class="carousel-button prev-button left" (click)="moveLeft()">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </button>
+    <button class="carousel-button next-button right" (click)="moveRight()">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </button> -->
+</div>
 </div>
 
 
 
+<!-- <button class="handle left-handle">
+    <div class="text" >&#8249;</div>
+  </button>
+  <button class="handle right-handle">
+    <div class="text" >&#8250;</div>
+  </button> -->
 
 <!-- 
 <div class="containerCard" id="containerCard">

@@ -86,6 +86,11 @@
     padding: 10px;
     border-radius: 10px;
 }
+.listItemActive{
+    background-color: #f9f9ff;
+    padding: 10px;
+    border-radius: 10px;
+}
 .homesvgHover{
     position: absolute;
     height: 100px;

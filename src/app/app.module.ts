@@ -12,6 +12,8 @@ import { SkillsComponent } from './skills/skills.component';
 import { UsecasesComponent } from './usecases/usecases.component';
 import { ContactpageComponent } from './contactpage/contactpage.component';
 import { SafeUrlPipe } from './safe-url.pipe';
+import { CRUDComponent } from './crud/crud.component';
+
 
 @NgModule({
   declarations: [
@@ -22,14 +24,13 @@ import { SafeUrlPipe } from './safe-url.pipe';
     SkillsComponent,
     UsecasesComponent,
     ContactpageComponent,
-    SafeUrlPipe
+    SafeUrlPipe,
+    CRUDComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule,
-  
-  ],
+    NgbModule,  ],
   providers: [SharedService],
   bootstrap: [AppComponent]
 })

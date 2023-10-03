@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import data from '../data/data.json'
 
 @Component({
   selector: 'app-usecases',
@@ -6,18 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./usecases.component.css']
 })
 export class UsecasesComponent implements OnInit {
-
-  usecases = [
-     { 'title': 'calculatorApp', 'lang': '', 'demo': 'https://codepen.io/MATTA-VISWANADHGOWD/embed/wvryjVq?default-tab=html%2Cresult', 'description': 'its a basic weather application which used google cloud and weather apis, its a basic weather application which used google cloud and weather apis' },
-     { 'title': 'calculatorApp', 'lang': '', 'demo': 'https://codepen.io/MATTA-VISWANADHGOWD/embed/wvryjVq?default-tab=html%2Cresult', 'description': 'its a basic weather application which used google cloud and weather apis, its a basic weather application which used google cloud and weather apis' },
-     { 'title': 'calculatorApp', 'lang': '', 'demo': 'https://codepen.io/MATTA-VISWANADHGOWD/embed/wvryjVq?default-tab=html%2Cresult', 'description': 'its a basic weather application which used google cloud and weather apis, its a basic weather application which used google cloud and weather apis' },
-     { 'title': 'calculatorApp', 'lang': '', 'demo': 'https://codepen.io/MATTA-VISWANADHGOWD/embed/wvryjVq?default-tab=html%2Cresult', 'description': 'its a basic weather application which used google cloud and weather apis, its a basic weather application which used google cloud and weather apis' },
-     { 'title': 'calculatorApp', 'lang': '', 'demo': 'https://codepen.io/MATTA-VISWANADHGOWD/embed/wvryjVq?default-tab=html%2Cresult', 'description': 'its a basic weather application which used google cloud and weather apis, its a basic weather application which used google cloud and weather apis' },
-     { 'title': 'calculatorApp', 'lang': '', 'demo': 'https://codepen.io/MATTA-VISWANADHGOWD/embed/wvryjVq?default-tab=html%2Cresult', 'description': 'its a basic weather application which used google cloud and weather apis, its a basic weather application which used google cloud and weather apis' },
-     { 'title': 'calculatorApp', 'lang': '', 'demo': 'https://codepen.io/MATTA-VISWANADHGOWD/embed/wvryjVq?default-tab=html%2Cresult', 'description': 'its a basic weather application which used google cloud and weather apis, its a basic weather application which used google cloud and weather apis' },
-     { 'title': 'calculatorApp', 'lang': '', 'demo': 'https://codepen.io/MATTA-VISWANADHGOWD/embed/wvryjVq?default-tab=html%2Cresult', 'description': 'its a basic weather application which used google cloud and weather apis, its a basic weather application which used google cloud and weather apis' },
-
-  ]
+  usecases = data.usecases
+ 
   constructor() { }
 
   ngOnInit(): void {

@@ -556,7 +556,7 @@
                         </filter>
                     </defs>
                 </svg>
-                <li class="listItem" (mouseenter)="showSVG.aboutsvgHover = true"
+                <li class="listItem" [ngClass]="isScrollReached.currentTab == '2' ? 'listItemActive' : ''" (mouseenter)="showSVG.aboutsvgHover = true"
                     (mouseleave)="showSVG.aboutsvgHover = false" (click)="scrollToElement(2)">About</li>
                 <svg class="animated aboutsvgHover" *ngIf="showSVG.aboutsvgHover"
                     [ngStyle]="{ display: showSVG.aboutsvgHover ? 'block' : 'none' }" id="freepik_stories-about-us-page"
@@ -1301,10 +1301,10 @@
                         </filter>
                     </defs>
                 </svg>
-                <li class="listItem" (click)="scrollToElement(3)">skills</li>
-                <li class="listItem" (click)="scrollToElement(4)">Projects</li>
-                <li class="listItem" (click)="scrollToElement(5)">Usecases</li>
-                <li class="listItem" (click)="scrollToElement(6)">Contact me</li>
+                <li class="listItem" [ngClass]="isScrollReached.currentTab == '3' ? 'listItemActive' : ''" (click)="scrollToElement(3)">skills</li>
+                <li class="listItem" [ngClass]="isScrollReached.currentTab == '4' ? 'listItemActive' : ''" (click)="scrollToElement(4)">Projects</li>
+                <li class="listItem" [ngClass]="isScrollReached.currentTab == '5' ? 'listItemActive' : ''" (click)="scrollToElement(5)">Usecases</li>
+                <li class="listItem" [ngClass]="isScrollReached.currentTab == '6' ? 'listItemActive' : ''" (click)="scrollToElement(6)">Contact me</li>
                 <a class="i-ic-outline-file-download" (mouseenter)="showSVG.downloadPdf = true"
                     (mouseleave)="showSVG.downloadPdf = false" href="/src/assets/Resume-M-Viswanath-Gowda.pdf"
                     download></a>
@@ -2031,7 +2031,7 @@
         </div>
     </div>
     <div>
-        <div class="containerMain" #homePage>
+        <div class="containerMain" id="homePage" #homePage>
             <div id="introsvg">
                 <svg class="animated introsvg" id="introsvg2" id="freepik_stories-code-typing"
                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500"
@@ -3998,7 +3998,7 @@
             </div>
 
         </div>
-        <div class="conatainerAbout" #aboutPage>
+        <div class="conatainerAbout" id="aboutPage" #aboutPage>
             <div class="aboutme">
                 <li class="aboutmeitsme">its me</li>
                 <li class="aboutmeTitle">{{resume.basicDeatails.name}}</li>
@@ -4014,16 +4014,16 @@
             <div class="skills">
             </div>
         </div>
-        <div class="containerSkills" #skillsPage>
+        <div class="containerSkills" id="skillsPage" #skillsPage>
                 <app-skills></app-skills>
         </div>
-        <div class="containerProjects" #projectsPage>
+        <div class="containerProjects" id="projectsPage" #projectsPage>
            <app-projects></app-projects>
         </div>
-        <div class="containerUsecases" #usecases>
+        <div class="containerUsecases" id="usecases" #usecases>
             <app-usecases></app-usecases>
         </div>
-        <div class="contactme" #contactPage>
+        <div class="contactme" id="contactPage" #contactPage>
             <app-contactpage></app-contactpage>
         </div>
     </div>

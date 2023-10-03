@@ -24,7 +24,8 @@
       "es2020",
       "dom"
     ],
-    "types": ["node", "googlemaps"]
+    "types": ["node", "googlemaps"],
+    "resolveJsonModule": true
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

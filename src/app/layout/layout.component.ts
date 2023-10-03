@@ -1,6 +1,9 @@
 import { AfterViewInit, Component, ElementRef, EventEmitter, HostListener, OnInit, Output, ViewChild } from '@angular/core';
 import { SharedService } from '../shared.service';
 import { timeout } from 'rxjs';
+import * as data from '../data/data.json'
+
+
 
 @Component({
   selector: 'app-layout',
@@ -17,49 +20,13 @@ export class LayoutComponent implements OnInit {
   @ViewChild('contactPage') contactPage!: ElementRef;
   cardWidth: any;
   currentView: any = true
-
   isScrollReached = {
     headerTitle: true,
     toolBar: false,
-    currentPage: '1'
+    currentPage: '1',
+    currentTab: '0'
   };
-  resume = {
-    basicDeatails: {
-      name: 'M Viswanath Gowda',
-      email: 'viswavishu40.com',
-      phone: '(+91) 9 8 8 8 8',
-      address: 'Mumbai, Maharashtra',
-      website: 'viswavishu40.com',
-      github: 'viswavishu40',
-      linkedin: 'viswavishu40',
-      twitter: 'viswavish',
-    },
-    education: {},
-    aboutme: {
-      des: "Have progressive experience in Information Technology and has been involved in the Design and Development of enterprise integration projects. Strong in design and integration with intuitive problem-solving skills, Passionate about implementing and launching new projects, Ability to translate business requirements into technical solutions.",
-      skills: {
-        languages: ['HTML', 'CSS', 'Javascript', 'typescript', 'AngularJs', 'angular2+']
-      },
-    },
-    projects: [
-      { 'title': 'weatherApp', 'github': '', 'demo': 'https://viswanathgowda.github.io/weatherApplication/', 'description': 'its a basic weather application which used google cloud and weather apis' },
-      { 'title': 'calculatorApp', 'github': '', 'demo': 'https://primeng.org/timeline', 'description': 'its a basic weather application which used google cloud and weather apis, its a basic weather application which used google cloud and weather apis' },
-      { 'title': 'calculatorApp', 'github': '', 'demo': '', 'description': 'its a basic weather application which used google cloud and weather apis, its a basic weather application which used google cloud and weather apis' },
-      { 'title': 'calculatorApp', 'github': '', 'demo': '', 'description': 'its a basic weather application which used google cloud and weather apis, its a basic weather application which used google cloud and weather apis' },
-      { 'title': 'calculatorApp', 'github': '', 'demo': '', 'description': 'its a basic weather application which used google cloud and weather apis, its a basic weather application which used google cloud and weather apis' },
-      { 'title': 'calculatorApp', 'github': '', 'demo': '', 'description': 'its a basic weather application which used google cloud and weather apis, its a basic weather application which used google cloud and weather apis' },
-      { 'title': 'calculatorApp', 'github': '', 'demo': '', 'description': 'its a basic weather application which used google cloud and weather apis, its a basic weather application which used google cloud and weather apis' },
-      { 'title': 'calculatorApp', 'github': '', 'demo': '', 'description': 'its a basic weather application which used google cloud and weather apis, its a basic weather application which used google cloud and weather apis' },
-      { 'title': 'calculatorApp', 'github': '', 'demo': '', 'description': 'its a basic weather application which used google cloud and weather apis, its a basic weather application which used google cloud and weather apis' },
-      { 'title': 'calculatorApp', 'github': '', 'demo': '', 'description': 'its a basic weather application which used google cloud and weather apis, its a basic weather application which used google cloud and weather apis' },
-      { 'title': 'calculatorApp', 'github': '', 'demo': '', 'description': 'its a basic weather application which used google cloud and weather apis, its a basic weather application which used google cloud and weather apis' },
-      { 'title': 'calculatorApp', 'github': '', 'demo': '', 'description': 'its a basic weather application which used google cloud and weather apis, its a basic weather application which used google cloud and weather apis' }
-
-
-    ],
-    usecases: []
-
-  }
+  resume = data;
 
   showSVG = {
     homesvgHover: false,
@@ -68,27 +35,32 @@ export class LayoutComponent implements OnInit {
   }
   videoUrl = "C:\POC's\portfolio\src\assets\examplevideo.mp4"
   // currentIndex: number = 0;
+  renderCount = 0;
 
   constructor(private shared: SharedService) { }
 
   ngOnInit(): void {
     let scrollvalue = localStorage.getItem('scrollPosition');
+    this.renderCount = 0
+    this.isScrollReached.currentTab = '0'
     if (scrollvalue && this.isScrollReached.currentPage !== '1' ? scrollvalue > '200' : false) {
       this.isScrollReached.toolBar = true
     } else {
       this.isScrollReached = {
         headerTitle: true,
         toolBar: false,
-        currentPage: '1'
+        currentPage: '1',
+        currentTab: '0'
       };
     }
-    // this.triggerReRender()
   }
 
   @HostListener('window:scroll', [])
   onScroll(): void {
     const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    if (scrollPosition > 30) { // Change 100 to your desired scroll position
+    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
+    if (scrollPosition > 30) { 
       this.isScrollReached.headerTitle = false;
     } else {
       this.isScrollReached.headerTitle = true;
@@ -101,9 +73,25 @@ export class LayoutComponent implements OnInit {
     } else {
       this.isScrollReached.toolBar = false
     }
-
-    if(scrollPosition > 733){
-      this.triggerReRender();
+    if(scrollPosition >= 460 && scrollPosition <= 764){
+      this.renderCount++
+      console.log(this.renderCount, 'rendercount')
+      if(this.renderCount == 1){
+        this.triggerReRender();
+      }
+    }else {
+      this.renderCount = 0
+    }
+    if(windowHeight == scrollPosition || (windowHeight - 30) * 2 > scrollPosition){
+      this.isScrollReached.currentTab = '2'
+    }else if((windowHeight - 30) * 2 < scrollPosition && (windowHeight - 30) * 3 > scrollPosition){
+      this.isScrollReached.currentTab = '3'
+    }else if((windowHeight - 30) * 3 < scrollPosition && (windowHeight - 30) * 4 > scrollPosition){
+      this.isScrollReached.currentTab = '4'
+    }else if((windowHeight - 30) * 4 < scrollPosition && (windowHeight - 30) * 5 > scrollPosition){
+      this.isScrollReached.currentTab = '5'
+    }else if((windowHeight - 30) * 5 < scrollPosition && (windowHeight - 30) * 6 > scrollPosition){
+      this.isScrollReached.currentTab = '6'
     }
   }
 
@@ -129,51 +117,11 @@ export class LayoutComponent implements OnInit {
       this.contactPage.nativeElement.scrollIntoView({behavior: 'smooth'});
     }
   }
-
-
-  // moveLeft() {
-  //   this.currentIndex = Math.max(this.currentIndex - 1, 0);
-  //   this.carouselScroll();
-  // }
-
-  // moveRight() {
-  //   this.currentIndex = Math.min(this.currentIndex + 1, this.resume.projects.length - 4);
-  // }
-
-  receivecardWidth(data: any) {
-    this.cardWidth = data;
-  }
-  // carouselScroll() {
-  //   setTimeout(() => {
-  //     let carouselContainer = document.getElementById('carouselContainer');
-  //     if (carouselContainer !== null) {
-  //       // Calculate the scroll position and container width
-  //       let scrollPosition = carouselContainer.scrollLeft;
-  //       let containerWidth = carouselContainer.clientWidth;
-
-  //       // Calculate the index of the first visible card
-  //       // const cardWidth = carouselContainer.querySelector('.card').clientWidth;
-  //       const visibleCardIndex = Math.floor(scrollPosition / this.cardWidth);
-
-  //       // Calculate the scroll position to align the first visible card
-  //       const targetScrollPosition = visibleCardIndex * this.cardWidth;
-
-  //       // Scroll the carousel container to the target position
-  //       carouselContainer.scrollTo({
-  //         left: targetScrollPosition,
-  //         behavior: 'smooth',
-  //       });
-  //     }
-  //   }, 0)
-
-
-  // }
-
+ 
   triggerReRender() {
     this.currentView = false
     setTimeout(() => {
       this.currentView = true
     }, 0)
-    // this.shared.reloadComponent(this.isScrollReached.currentPage);
   }
 }

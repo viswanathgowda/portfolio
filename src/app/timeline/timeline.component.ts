@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { SharedService } from '../shared.service';
+import data from '../data/data.json'
+
 
 @Component({
   selector: 'app-timeline',
@@ -8,6 +10,7 @@ import { SharedService } from '../shared.service';
 })
 export class TimelineComponent implements OnInit {
   viewIn: any
+  data = data.education
   constructor(private shared: SharedService) { }
 
   ngOnInit(): void {

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import data from '../data/data.json'
 
 @Component({
   selector: 'app-skills',
@@ -6,30 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./skills.component.css']
 })
 export class SkillsComponent implements OnInit {
-
-  skills = {
-    languages: [
-      {
-        web:
-          [
-            { 'title': 'HTML', 'des': 'html des', 'icon': 'i-devicon-html5-wordmark' },
-            { 'title': 'CSS', 'des': 'CSS des', 'icon': 'i-devicon-css3-wordmark' },
-            { 'title': 'Javascript', 'des': 'Javascript des', 'icon': 'i-logos-javascript' },
-            { 'title': 'typescript', 'des': 'typescript des', 'icon': 'i-vscode-icons-file-type-typescript-official' },
-            { 'title': 'AngularJs', 'des': 'AngularJs des', 'icon':'i-devicon-angularjs-wordmark' },
-            { 'title': 'angular2+', 'des': 'angular2+ des', 'icon': 'i-vscode-icons-file-type-angular' }
-          ]
-      },
-      {
-        backend: []
-      },
-      {
-        testing: [
-          { 'title': 'Manual Testing', 'des': 'Manual Testing des'}
-        ]
-      }
-    ]
-  }
+  skills = data.aboutme.skills
+ 
   skillSet: any;
   nodataFound: any;
   constructor() { }

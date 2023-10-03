@@ -111,6 +111,7 @@
   .title {
     font-size: 1.3rem;
     font-weight: bold;
+    margin-bottom: 0;
   }
   /*Text divider*/
   .title::after {
@@ -121,6 +122,9 @@
     height: 2px;
     margin: 2px auto;
     background-color: #1b1b1b;
+  }
+  .subtitle{
+    font-size: smaller;
   }
   .cardIcon{
     width: 7rem;
