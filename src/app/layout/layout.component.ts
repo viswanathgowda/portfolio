@@ -36,14 +36,16 @@ export class LayoutComponent implements OnInit {
   videoUrl = "C:\POC's\portfolio\src\assets\examplevideo.mp4"
   // currentIndex: number = 0;
   renderCount = 0;
+  innerWidth!: number;
 
   constructor(private shared: SharedService) { }
 
   ngOnInit(): void {
+    this.innerWidth = window.innerWidth;
     let scrollvalue = localStorage.getItem('scrollPosition');
     this.renderCount = 0
     this.isScrollReached.currentTab = '0'
-    if (scrollvalue && this.isScrollReached.currentPage !== '1' ? scrollvalue > '200' : false) {
+    if (scrollvalue && this.isScrollReached.currentPage !== '1' ? scrollvalue > '700' : false) {
       this.isScrollReached.toolBar = true
     } else {
       this.isScrollReached = {
@@ -54,7 +56,6 @@ export class LayoutComponent implements OnInit {
       };
     }
   }
-
   @HostListener('window:scroll', [])
   onScroll(): void {
     const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
@@ -66,7 +67,7 @@ export class LayoutComponent implements OnInit {
       this.isScrollReached.headerTitle = true;
     }
 
-    if (scrollPosition > 200) {
+    if (scrollPosition > 700) {
       let scrollvalue = scrollPosition.toString()
       localStorage.setItem('scrollPosition', scrollvalue)
       this.isScrollReached.toolBar = true
@@ -93,6 +94,10 @@ export class LayoutComponent implements OnInit {
     }else if((windowHeight - 30) * 5 < scrollPosition && (windowHeight - 30) * 6 > scrollPosition){
       this.isScrollReached.currentTab = '6'
     }
+  }
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.innerWidth = window.innerWidth;
   }
 
   scrollToElement(pgNo: any) {

@@ -113,38 +113,7 @@
     cursor: pointer;
 }
 
-.containerMain {
-    height: 100vh;
-    width: 96vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
-.headerText {
-    font-size: -webkit-xxx-large;
-    /* font-family: "proxima-nova", sans-serif; */
-    font-family: cursive;
-    margin-right: 10rem;
-    /* display: flex; */
-    padding: 0px 0px 0px 95px;
-    line-height: 70px;
-    letter-spacing: 4px;
-}
-.headerSvg{
-    height: 5rem; 
-    margin: 103px 22px -154px 39px; 
-    transform: scale(5);
-}
-.headerTitle {
-    font-size: -webkit-xxx-large;
-    /* font-family: "proxima-nova", sans-serif; */
-    font-family: cursive;
-    padding: 0px 0px 0px 95px;
-    line-height: 70px;
-    letter-spacing: 4px;
-
-}
 
 .scale-up-bl {
     -webkit-animation: scale-up-bl 0.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) 0.5s both;
@@ -266,16 +235,145 @@
     display: flex;
 }
 /* landing page svg styles*/
-.introsvg {
-    height: 35rem;
-    top: 100px;
-    margin-left: 10rem;
-}
 
 #introsvg {
     position: -webkit-sticky !important;
     position: sticky !important;
-    top: 100px;
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .containerMain {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 15px;
+        min-height: 100vh;
+    }
+    .introsvg {
+        height: 20rem;
+        margin-top: 5rem;
+    }
+    .headerText {
+        font-size: xx-large;
+        font-family: cursive;
+        text-align: center;
+        padding: 0 5px 0 5px;
+    }
+    .headerSvg{
+        height: 3rem; 
+        margin: 3px -18px -154px 39px;
+        transform: scale(5);
+    }
+    .headerTitle {
+        font-size: xx-large;
+        font-family: cursive;
+        text-align: center;
+        padding: 25px 5px 0 5px;
+        color: #90B7F9;
+    }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .containerMain {
+        height: auto;
+        min-height: 100vh;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        align-items: center;
+    }
+    .introsvg {
+        height: 35rem;
+        top: 100px;
+    }
+    .headerText {
+        font-size: -webkit-xxx-large;
+        font-family: cursive;
+    }
+    .headerTitle {
+        font-size: xx-large;
+        font-family: cursive;
+        text-align: center;
+        padding: 25px 5px 25px 5px;
+        color: #90B7F9;
+    }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .containerMain {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        align-content: center;
+        justify-content: center;
+        flex-direction: row;
+        min-height: 100vh;
+        height: auto;
+    }
+    .introsvg {
+        height: 35rem;
+        top: 100px;
+    }
+    .headerText {
+        font-size: -webkit-xxx-large;
+        font-family: cursive;
+    }
+    .headerSvg{
+        height: 5rem; 
+        margin: 103px 22px -154px 39px; 
+        transform: scale(5);
+    }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .containerMain {
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        flex-wrap: wrap;
+    }
+    .introsvg {
+        height: 35rem;
+        top: 100px;
+    }
+    .headerText {
+        font-size: -webkit-xxx-large;
+        font-family: cursive;
+    }
+    .headerSvg{
+        height: 5rem; 
+        margin: 103px 22px -154px 39px; 
+        transform: scale(5);
+    }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .containerMain {
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        flex-wrap: wrap;
+    }
+    .introsvg {
+        height: 35rem;
+        top: 100px;
+    }
+    .headerText {
+        font-size: -webkit-xxx-large;
+        font-family: cursive;
+    }
+    .headerSvg{
+        height: 5rem; 
+        margin: 103px 22px -154px 39px; 
+        transform: scale(5);
+    }
 }
 
   .carousel {
