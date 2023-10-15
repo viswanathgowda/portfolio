@@ -28,7 +28,8 @@ import { SafeUrlPipe } from './safe-url.pipe';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule,  ],
+    NgbModule
+  ],
   providers: [SharedService],
   bootstrap: [AppComponent]
 })

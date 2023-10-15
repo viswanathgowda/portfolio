@@ -1,8 +1,5 @@
-import { AfterViewInit, Component, ElementRef, EventEmitter, HostListener, OnInit, Output, ViewChild } from '@angular/core';
-import { SharedService } from '../shared.service';
-import { timeout } from 'rxjs';
+import { Component, ElementRef, HostListener, OnInit, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
 import * as data from '../data/data.json'
-
 
 
 @Component({
@@ -18,6 +15,8 @@ export class LayoutComponent implements OnInit {
   @ViewChild('projectsPage') projectsPage!: ElementRef;
   @ViewChild('usecases') usecases!: ElementRef;
   @ViewChild('contactPage') contactPage!: ElementRef;
+  @ViewChild('menuOptTemplt', { read: TemplateRef })
+  menuOptTemplt!: TemplateRef<any>;
   cardWidth: any;
   currentView: any = true
   isScrollReached = {
@@ -37,8 +36,10 @@ export class LayoutComponent implements OnInit {
   // currentIndex: number = 0;
   renderCount = 0;
   innerWidth!: number;
+  change:boolean = false;
+  menuOpt:any
 
-  constructor(private shared: SharedService) { }
+  constructor(private vref:ViewContainerRef) { }
 
   ngOnInit(): void {
     this.innerWidth = window.innerWidth;
@@ -101,6 +102,9 @@ export class LayoutComponent implements OnInit {
   }
 
   scrollToElement(pgNo: any) {
+    if(this.menuOpt){
+      this.menuOpt.destroy();
+    }
     if (this.homePage && pgNo === 1) {
       this.isScrollReached.currentPage = '1'
       this.homePage.nativeElement.scrollIntoView({ behavior: 'smooth' });
@@ -129,4 +133,8 @@ export class LayoutComponent implements OnInit {
       this.currentView = true
     }, 0)
   }
+  mobileMenu( event: any){
+    this.change ? this.change = false : this.change = true;
+    this.change ? this.menuOpt = this.vref.createEmbeddedView(this.menuOptTemplt) : this.menuOpt.destroy();
+   }
 }

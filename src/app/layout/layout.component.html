@@ -2,10 +2,10 @@
     <div [ngClass]="isScrollReached.toolBar ? 'toolBar' : 'toolBarhide'">
 
         <div class="toolBaralign" *ngIf="innerWidth > 600px">
-            <div class="toolBarleftTitle">
+            <!-- <div class="toolBarleftTitle">
                 <div class="titleLoader"><span class="titleLoaderbraces">{{'{'}}</span>Vishwa<span class="titleLoaderbraces">{{'}'}}</span>
                 </div>
-            </div>
+            </div> -->
             <ul class="list">
                 <li class="listItem" (mouseenter)="showSVG.homesvgHover = true"
                     (mouseleave)="showSVG.homesvgHover = false"  [ngClass]="isScrollReached.currentTab == '1' ? 'listItemActive' : ''"  (click)="scrollToElement(1)">Home</li>
@@ -2030,6 +2030,14 @@
             </ul>
         </div>
     </div>
+    <div *ngIf="innerWidth < 600" class="mobileMenu">
+            <div class="containerMobileMenu" (click)="mobileMenu($event); " >
+                <div class="bar1" [ngClass]="change ? 'changeb1' : ''"></div>
+                <div class="bar2" [ngClass]="change ? 'changeb2' : ''"></div>
+                <div class="bar3" [ngClass]="change ? 'changeb3' : ''"></div>
+            </div>
+            <div class="i-material-symbols-account-circle" [ngStyle]="{'padding-left.px' : change ? 0  : ''}"></div>
+    </div>
     <div>
         <div class="containerMain" id="homePage" #homePage>
             <div id="introsvg">
@@ -3318,4 +3326,14 @@
             <app-contactpage></app-contactpage>
         </div>
     </div>
+    <ng-template  #menuOptTemplt>
+        <ul class="menulist" *ngIf="innerWidth < 600">
+            <li class="menulistItem" (click)="scrollToElement(1)">Home</li>
+            <li class="menulistItem" (click)="scrollToElement(2)">About</li>
+            <li class="menulistItem" (click)="scrollToElement(3)">Skills</li>
+            <li class="menulistItem" (click)="scrollToElement(4)">Projetcs</li>
+            <li class="menulistItem" (click)="scrollToElement(5)">Usecases</li>
+            <li class="menulistItem" (click)="scrollToElement(6)">Certificates</li>
+        </ul>
+    </ng-template>
 </div>
