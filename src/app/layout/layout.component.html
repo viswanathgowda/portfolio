@@ -558,7 +558,7 @@
                 </svg>
                 <li class="listItem" [ngClass]="isScrollReached.currentTab == '2' ? 'listItemActive' : ''" (mouseenter)="showSVG.aboutsvgHover = true"
                     (mouseleave)="showSVG.aboutsvgHover = false" (click)="scrollToElement(2)">About</li>
-                <svg class="animated aboutsvgHover" *ngIf="showSVG.aboutsvgHover"
+                <!-- <svg class="animated aboutsvgHover" *ngIf="showSVG.aboutsvgHover"
                     [ngStyle]="{ display: showSVG.aboutsvgHover ? 'block' : 'none' }" id="freepik_stories-about-us-page"
                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" version="1.1"
                     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs">
@@ -1300,7 +1300,7 @@
                             </feColorMatrix>
                         </filter>
                     </defs>
-                </svg>
+                </svg> -->
                 <li class="listItem" [ngClass]="isScrollReached.currentTab == '3' ? 'listItemActive' : ''" (click)="scrollToElement(3)">skills</li>
                 <li class="listItem" [ngClass]="isScrollReached.currentTab == '4' ? 'listItemActive' : ''" (click)="scrollToElement(4)">Projects</li>
                 <li class="listItem" [ngClass]="isScrollReached.currentTab == '5' ? 'listItemActive' : ''" (click)="scrollToElement(5)">Usecases</li>
@@ -3297,7 +3297,11 @@
                 </div>
             </div>
         </div>
-        <div class="conatainerAbout" id="aboutPage" #aboutPage>
+        <div id="aboutPage" #aboutPage>
+           <div *ngIf="innerWidth <= 768px" class="conatainerAbout">
+            <div>
+                <img class="profileImg" src="assets/young-bearded-man-with-striped-shirt.jpg" alt="my profile">
+            </div>
             <div class="aboutme">
                 <li class="aboutmeitsme">its me</li>
                 <li class="aboutmeTitle">{{resume.basicDeatails.name}}</li>
@@ -3310,7 +3314,21 @@
                     <app-timeline *ngIf="currentView"></app-timeline>
                 </div>    
             </div>
-            <div class="skills">
+           </div>
+            <div *ngIf="innerWidth > 768px" class="conatainerAbout">
+                <div class="aboutme">
+                    <img class="profileImg" src="assets/young-bearded-man-with-striped-shirt.jpg" alt="my profile">
+                </div>
+                <div class="profilespilt">
+                    <div class="aboutmeContent">
+                        <li class="aboutmeitsme">its me</li>
+                        <li class="aboutmeTitle">{{resume.basicDeatails.name}}</li>
+                        <li class="aboutmeDes">{{resume.aboutme.des}}</li>
+                    </div>
+                    <div class="timeLine">
+                        <app-timeline *ngIf="currentView"></app-timeline>
+                    </div>    
+                </div>
             </div>
         </div>
         <div class="containerSkills" id="skillsPage" #skillsPage>

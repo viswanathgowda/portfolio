@@ -104,6 +104,7 @@ export class LayoutComponent implements OnInit {
   scrollToElement(pgNo: any) {
     if(this.menuOpt){
       this.menuOpt.destroy();
+      this.change = false
     }
     if (this.homePage && pgNo === 1) {
       this.isScrollReached.currentPage = '1'
