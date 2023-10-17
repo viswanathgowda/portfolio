@@ -282,13 +282,19 @@
     text-align: justify;
 } */
 .containerSkills{
-    height: 100vh;
+    height: 100%;
+    width: 100%;
+    min-height: 100dvh;
     display: flex;
+    justify-content: center;
 }
 .containerProjects{
-    height: 100vh;
-    display: flex;
     background-color: #fff;
+    height: 100%;
+    width: 100%;
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
 }
 .containerUsecases{
     height: 100vh;
@@ -358,7 +364,7 @@
     }
     .aboutmeTitle{
         margin-top: 0px;
-        font-size: 35px;
+        font-size: xx-large;
         font-weight: bold;
         font-family: "Heebo", sans-serif;
         line-height: 50px;
@@ -420,7 +426,7 @@
     }
     .aboutmeTitle{
         margin-top: 0px;
-        font-size: 48px;
+        font-size: xx-large;
         font-weight: bold;
         font-family: "Heebo", sans-serif;
         line-height: 54px;
@@ -484,7 +490,7 @@
     }
     .aboutmeTitle{
         margin-top: 0px;
-        font-size: 48px;
+        font-size: xx-large;
         font-weight: bold;
         font-family: "Heebo", sans-serif;
         line-height: 54px;
@@ -566,7 +572,7 @@
     }
     .aboutmeTitle{
         margin-top: 0px;
-        font-size: 48px;
+        font-size: xx-large;
         font-weight: bold;
         font-family: "Heebo", sans-serif;
         line-height: 54px;
@@ -649,7 +655,7 @@
     }
     .aboutmeTitle{
         margin-top: 0px;
-        font-size: 48px;
+        font-size: xx-large;
         font-weight: bold;
         font-family: "Heebo", sans-serif;
         line-height: 54px;

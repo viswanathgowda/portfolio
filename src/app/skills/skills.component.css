@@ -1,6 +1,20 @@
+
+  
+@keyframes uiverse723 {
+    0%, 100% {
+      clip-path: polygon(0% 45%, 15% 44%, 32% 50%, 
+       54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%);
+    }
+  
+    50% {
+      clip-path: polygon(0% 60%, 16% 65%, 34% 66%, 
+       51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%);
+    }
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
 .skills{
-    margin: 8rem 1rem 1rem 1rem;
-    width: 96.8vw;
+  width: 100%;
 }
 .skillcard{
     display: flex;
@@ -16,11 +30,11 @@
 }
 .skillsHeaderTitle{
     font-family: "Heebo", sans-serif;
-    font-size: 36px;
+    font-size: xx-large;
     color: #222222;
     font-weight: bold;
-    margin-bottom: 15px;
     text-transform: uppercase;
+    margin-bottom: 0;
 }
 .skillsHeaderDes{
     font-size: 16px;
@@ -35,20 +49,27 @@
     flex-direction: row;
     align-items: center;
     width: 100%;
-    margin: 0rem 0 3rem 0;
+    margin: 0rem 0 1rem 0;
     justify-content: center;
+    position: relative;
+    z-index: 9;
 }
 .skillsItem{
-    font-size: 14px;
+    font-size: small;
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
-    letter-spacing: 2.1px;
+    letter-spacing: 1px;
     font-weight: 600;
     cursor: pointer;
     padding: 5px;
+    background-color: #ceced6;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 0 0.5rem 0 0.5rem;
+    text-align: center;
 }
 .skillsItem:hover{
-    background-color: #ceced6;
+    background-color: #90B7F9;;
     padding: 5px;
     border-radius: 5px;
 }
@@ -73,7 +94,7 @@
   
 .card {
     color: #1b1b1b;
-    width: 198px;
+    width: 400px;
     height: 254px;
     position: relative;
     /* outline: 6px solid #f5f5f5; */
@@ -178,16 +199,385 @@
     -webkit-text-stroke: 1px rgb(128, 198, 255);
     animation: uiverse723 3s ease-in-out infinite;
   }
-  
-@keyframes uiverse723 {
-    0%, 100% {
-      clip-path: polygon(0% 45%, 15% 44%, 32% 50%, 
-       54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%);
-    }
-  
-    50% {
-      clip-path: polygon(0% 60%, 16% 65%, 34% 66%, 
-       51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%);
-    }
+ 
 }
-  
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .skills{
+      width: 100%;
+    }
+    .skillcard{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .skillsHeader{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin: 4rem 0 0rem 0;
+    }
+    .skillsHeaderTitle{
+        font-family: "Heebo", sans-serif;
+        font-size: xx-large;
+        color: #222222;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 0;
+    }
+    .skillsHeaderDes{
+        font-size: 16px;
+        font-family: "Roboto", sans-serif;
+        line-height: 26px;
+        color: #777777;
+        max-width: 570px;
+        margin: 1rem 0 1rem 0;
+    }
+    .skillsContent{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        margin: 0rem 0 1rem 0;
+        justify-content: center;
+        position: relative;
+        z-index: 9;
+    }
+    .skillsItem{
+        font-size: small;
+        font-family: "Roboto", sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 600;
+        cursor: pointer;
+        padding: 5px;
+        background-color: #ceced6;
+        padding: 5px;
+        border-radius: 5px;
+        margin: 0 0.5rem 0 0.5rem;
+        text-align: center;
+    }
+    .skillsItem:hover{
+        background-color: #90B7F9;;
+        padding: 5px;
+        border-radius: 5px;
+    }
+    .vertical-line {
+        position: relative;
+        width: 2px;
+        height: 10px; /* Adjust the height as per your requirement */
+        /* background-color: #000; Set the color of the line */
+        margin: 0 6px 11px 6px;
+    }
+      
+    .vertical-line::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 4px;
+        height: 20px; /* Adjust the height of the top edge as per your requirement */
+        background-color: rgba(0, 0, 0, 0.125) /* Set the color of the top edge */
+    }
+      
+    .card {
+        color: #1b1b1b;
+        width: 200px;
+        height: 254px;
+        position: relative;
+        /* outline: 6px solid #f5f5f5; */
+        border-radius: 8px;
+        line-height: 150%;
+        padding: 16px;
+        background: #ff930f;
+        background-blend-mode: multiply;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.125), #fff);
+        transition: background-color 1s ease-in-out;
+        overflow: hidden;
+        cursor: pointer;
+        margin: 0 0.5rem 1rem 0.5rem;
+      }
+      
+      .card-front {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        bottom: 16px;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        transition: transform 1s cubic-bezier(0.785, 0.135, 0.150, 0.860);
+      }
+      
+      .card-back {
+        transform: translateX(120%);
+        transition: transform 1s cubic-bezier(0.785, 0.135, 0.150, 0.860);
+      }
+      
+      
+      /*Text*/
+      .title {
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin-bottom: 0;
+      }
+      /*Text divider*/
+      .title::after {
+        content: "";
+        display: block;
+        width: 50%;
+        border-radius: 50%;
+        height: 2px;
+        margin: 2px auto;
+        background-color: #1b1b1b;
+      }
+      .subtitle{
+        font-size: smaller;
+      }
+      .cardIcon{
+        width: 7rem;
+        height: 7rem;
+        margin-bottom: 2rem;
+      }
+      
+      /*Hover*/
+      .card:hover {
+        background-color: #1b1b1b25;
+      }
+      
+      .card:hover .card-front {
+        transform: translateX(-100%);
+      }
+      
+      .card:hover .card-back {
+        transform: translateX(0);
+      }
+      
+    .nodatafound{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .nodatafoundsvg{
+        height: 25rem;
+        margin-top: -85px;
+    }
+    .nodatafoundloader {
+        position: relative;
+        margin-top: -30px;
+      }
+      
+    .nodatafoundloader span {
+        position: absolute;
+        color: #fff;
+        transform: translate(-50%, -50%);
+        font-size: 38px;
+        letter-spacing: 5px;
+    }
+      
+    .nodatafoundloader span:nth-child(1) {
+        color: transparent;
+        -webkit-text-stroke: 0.3px rgb(128, 198, 255);
+      }
+      
+    .nodatafoundloader span:nth-child(2) {
+        color: rgb(128, 198, 255);
+        -webkit-text-stroke: 1px rgb(128, 198, 255);
+        animation: uiverse723 3s ease-in-out infinite;
+      }
+     
+    
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .skills{
+      width: 100%;
+    }
+    .skillcard{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .skillsHeader{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin: 4rem 0 0rem 0;
+    }
+    .skillsHeaderTitle{
+        font-family: "Heebo", sans-serif;
+        font-size: xx-large;
+        color: #222222;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 0;
+    }
+    .skillsHeaderDes{
+        font-size: 16px;
+        font-family: "Roboto", sans-serif;
+        line-height: 26px;
+        color: #777777;
+        max-width: 570px;
+        margin: 1rem 0 1rem 0;
+    }
+    .skillsContent{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        margin: 0rem 0 1rem 0;
+        justify-content: center;
+        position: relative;
+        z-index: 9;
+    }
+    .skillsItem{
+        font-size: small;
+        font-family: "Roboto", sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 600;
+        cursor: pointer;
+        padding: 5px;
+        background-color: #ceced6;
+        padding: 5px;
+        border-radius: 5px;
+        margin: 0 0.5rem 0 0.5rem;
+        text-align: center;
+    }
+    .skillsItem:hover{
+        background-color: #90B7F9;;
+        padding: 5px;
+        border-radius: 5px;
+    }
+    .vertical-line {
+        position: relative;
+        width: 2px;
+        height: 10px; /* Adjust the height as per your requirement */
+        /* background-color: #000; Set the color of the line */
+        margin: 0 6px 11px 6px;
+    }
+      
+    .vertical-line::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 4px;
+        height: 20px; /* Adjust the height of the top edge as per your requirement */
+        background-color: rgba(0, 0, 0, 0.125) /* Set the color of the top edge */
+    }
+      
+    .card {
+        color: #1b1b1b;
+        width: 200px;
+        height: 254px;
+        position: relative;
+        /* outline: 6px solid #f5f5f5; */
+        border-radius: 8px;
+        line-height: 150%;
+        padding: 16px;
+        background: #ff930f;
+        background-blend-mode: multiply;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.125), #fff);
+        transition: background-color 1s ease-in-out;
+        overflow: hidden;
+        cursor: pointer;
+        margin: 0 0.5rem 1rem 0.5rem;
+      }
+      
+      .card-front {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        bottom: 16px;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        transition: transform 1s cubic-bezier(0.785, 0.135, 0.150, 0.860);
+      }
+      
+      .card-back {
+        transform: translateX(120%);
+        transition: transform 1s cubic-bezier(0.785, 0.135, 0.150, 0.860);
+      }
+      
+      
+      /*Text*/
+      .title {
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin-bottom: 0;
+      }
+      /*Text divider*/
+      .title::after {
+        content: "";
+        display: block;
+        width: 50%;
+        border-radius: 50%;
+        height: 2px;
+        margin: 2px auto;
+        background-color: #1b1b1b;
+      }
+      .subtitle{
+        font-size: smaller;
+      }
+      .cardIcon{
+        width: 7rem;
+        height: 7rem;
+        margin-bottom: 2rem;
+      }
+      
+      /*Hover*/
+      .card:hover {
+        background-color: #1b1b1b25;
+      }
+      
+      .card:hover .card-front {
+        transform: translateX(-100%);
+      }
+      
+      .card:hover .card-back {
+        transform: translateX(0);
+      }
+      
+    .nodatafound{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .nodatafoundsvg{
+        height: 25rem;
+        margin-top: -85px;
+    }
+    .nodatafoundloader {
+        position: relative;
+        margin-top: -30px;
+      }
+      
+    .nodatafoundloader span {
+        position: absolute;
+        color: #fff;
+        transform: translate(-50%, -50%);
+        font-size: 38px;
+        letter-spacing: 5px;
+    }
+      
+    .nodatafoundloader span:nth-child(1) {
+        color: transparent;
+        -webkit-text-stroke: 0.3px rgb(128, 198, 255);
+      }
+      
+    .nodatafoundloader span:nth-child(2) {
+        color: rgb(128, 198, 255);
+        -webkit-text-stroke: 1px rgb(128, 198, 255);
+        animation: uiverse723 3s ease-in-out infinite;
+      }
+}

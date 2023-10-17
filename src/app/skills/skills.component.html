@@ -4,13 +4,22 @@
         <p class="skillsHeaderDes">I learnt and using below provided languages</p>
     </div>
     <div class="skillsContent">
-        <span class="skillsItem" (click)="skillset('web')">Web development</span>&nbsp;<span
+        <!-- <span class="skillsItem" (click)="skillset('web')">Web development</span>&nbsp;<span
             class="vertical-line"></span>&nbsp;<span class="skillsItem" (click)="skillset('backend')">Backend
             development</span>&nbsp;<span class="vertical-line"></span>&nbsp;<span class="skillsItem"
-            (click)="skillset('testing')">Testing</span>
+            (click)="skillset('testing')">Application Testing</span> -->
+            <div class="skillsItem" (click)="skillset(1)">
+                Web development
+            </div>
+            <div class="skillsItem" (click)="skillset(2)">
+                Backend development
+            </div>
+            <div class="skillsItem" (click)="skillset(3)">
+            Application Testing
+            </div>
     </div>
     <div class="skillcard"  *ngIf="nodataFound > 0 || nodataFound == undefined">
-        <div *ngFor="let card of skillSet">
+        <div *ngFor="let card of skillSets">
             <div class="card">
                 <div class="card-front">
                     <div class="{{card.icon}} cardIcon" ></div>
