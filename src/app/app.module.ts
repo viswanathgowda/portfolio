@@ -12,6 +12,7 @@ import { SkillsComponent } from './skills/skills.component';
 import { UsecasesComponent } from './usecases/usecases.component';
 import { ContactpageComponent } from './contactpage/contactpage.component';
 import { SafeUrlPipe } from './safe-url.pipe';
+import { ScrollableDirective } from './scrollable.directive';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { SafeUrlPipe } from './safe-url.pipe';
     UsecasesComponent,
     ContactpageComponent,
     SafeUrlPipe,
+    ScrollableDirective,
   ],
   imports: [
     BrowserModule,

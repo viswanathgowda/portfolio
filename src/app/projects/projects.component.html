@@ -86,42 +86,42 @@
 </div> -->
 <!-- working one -->
 <div>
-    <!-- <button class="carousel-button prev-button left" (click)="moveLeft()">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    </button> -->
-    <div class="wrapper">
-        <div *ngFor="let card of projects">
-
-            <div class="containerCard" id="containerCard">
-                <div class="card">
-                    <div class="cardHeader">
-                        <div class="cardTitle">
-                            <h3>{{card.title}}</h3>
+ 
+    <!-- <div class="wrapper"> -->
+        <section class="list-with-scroll">
+            <div class="list" appScrollable #list="appScrollable" [scrollUnit]="150">
+                <div *ngFor="let card of projects">
+        
+                    <div class="containerCard" id="containerCard">
+                        <div class="card">
+                            <div class="cardHeader">
+                                <div class="cardTitle">
+                                    <h3>{{card.title}}</h3>
+                                </div>
+                                <div class="cardIcons">
+                                    <a [attr.href]="card.github" class="i-radix-icons-github-logo githubIcon"
+                                        target="_blank"></a>
+                                    <a [attr.href]="card.demo" class="i-material-symbols-open-in-new openInNewIcon"
+                                        target="_blank"></a>
+                                </div>
+                            </div>
+                            <div class="cardBody">
+                                <iframe [src]="card.demo | safeUrl" width="100%" height="300" frameborder="0" loading="lazy"
+                                    allowtransparency="true" allowfullscreen="true"></iframe>
+                            </div>
+                            <div class="cardFooter">
+                                <p class="cardFooterDes">{{card.description}}</p>
+                            </div>
                         </div>
-                        <div class="cardIcons">
-                            <a [attr.href]="card.github" class="i-radix-icons-github-logo githubIcon"
-                                target="_blank"></a>
-                            <a [attr.href]="card.demo" class="i-material-symbols-open-in-new openInNewIcon"
-                                target="_blank"></a>
-                        </div>
-                    </div>
-                    <div class="cardBody">
-                        <iframe [src]="card.demo | safeUrl" width="100%" height="300" frameborder="0" loading="lazy"
-                            allowtransparency="true" allowfullscreen="true"></iframe>
-                    </div>
-                    <div class="cardFooter">
-                        <p class="cardFooterDes">{{card.description}}</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <!-- <button class="carousel-button prev-button left" (click)="moveLeft()">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    </button>
-    <button class="carousel-button next-button right" (click)="moveRight()">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    </button> -->
+            <button class="scroll-button" *ngIf="list.isOverflow && list.canScrollStart"  (click)="list.scroll(-1)" id="scroll-left">&#8249;</button>
+
+            <button class="scroll-button" *ngIf="list.isOverflow && list.canScrollEnd" (click)="list.scroll(1)">&#8250;</button>
+        </section>
+    <!-- </div> -->
+   
 </div>
 </div>
 
