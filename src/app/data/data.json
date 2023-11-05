@@ -7,7 +7,8 @@
       "website": "viswavishu40.com",
       "github": "viswavishu40",
       "linkedin": "viswavishu40",
-      "twitter": "viswavish"
+      "twitter": "viswavish",
+      "resume": "https://docs.google.com/document/d/1FoMdoSRPQYwE77tzC_zPmV4Q6ObfwvWq/edit?usp=drive_link&ouid=115967847659117969719&rtpof=true&sd=true"
     },
     "education": {
       "jobtitle": "ASE",
@@ -15,7 +16,7 @@
       "jobrole" : "Angular Developer",
       "company": "Isteer Technologies PVt Ltd",
       "companywebsite": "https://sites.google.com/isteer.com/isteer-employee-portal/home?authuser=0",
-      "experience": "1yr 6mo"
+      "experience": "1yr 10mo"
     },
     "aboutme": {
       "des": "Have progressive experience in Information Technology and has been involved in the Design and Development of enterprise integration projects. Strong in design and integration with intuitive problem-solving skills, Passionate about implementing and launching new projects, Ability to translate business requirements into technical solutions.",
@@ -37,7 +38,7 @@
           },
           {
             "testing": [
-              {"title": "Manual", "subtitle": "Manual Testing", "des": "Manual Testing des", "img": "/src/assets/software-testing.png"},
+              {"title": "Manual", "subtitle": "Manual Testing", "des": "Manual Testing des", "img": "/src/assets/software-testing.jpg"},
               {"title": "Cypress", "subtitle":"Cypress Automation Testing", "des": "Cypress Automation Testing", "icon": "i-logos-cypress-icon"}
             ]
           }

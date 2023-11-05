@@ -1,10 +1,31 @@
-<!-- <div>
-    <div class="googleMap" id="map"></div>
-</div> -->
-<!-- <google-map [center]="center" [zoom]="zoom">
-    <map-marker [position]="markerPosition"></map-marker>
-    <map-info-window [position]="infoWindowPosition" >
-      Hello, this is the info window!
-    </map-info-window>
-  </google-map> -->
-  
+<div class="container">
+    <div >
+        <div class="map" id="map"></div>
+        <p class="info">Please check Your position by adjusting the Zoom</p>
+    </div>
+    <div class="formcontainer">
+        <p class="title">Contact Me</p>
+        <div>
+            <a href="mailto:viswavishu40@gmail.com" title="viswavishu40@gmail.com"><img
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAACv0lEQVR4nO2UT2jTYByG48F5c4ieJ47RBE0rbZItcT2VHYQWWoebx11ksEPPehC92YA35wSvnpyDVoUetNrmYGvRKiK7bG6oW77uIqOCcyVx/eSbjWY1af70r/C98N7Kr++TPC1B4ODg4ODg6FLyeE7kKepugSTLeZLcyZNkseDxTBNdzk+JnlYluqjk6B0l5y2rOfoOzFDHrceT5GqBoqBBl0rDw4OdHg4zzKAi0Uuq5IX/NEevNIXYf/LG47WuFSmK6dR4JetlVMm7Zjj+b+fNAUhyywIAtQp4Lt7u8YDn4orkrVqMh0qOBuYAFFWzAQCBwEGZ5x59CQaPtTr86+joUSBwD9BNq/G/Abw102N2xmsAdYjPm+OjvNvxgGcCQOA+avfsAKC2DaBeBQjcFUgQh5yMLwvsLOC5qv5WrwAcKaVXBjS0ZYD5iZn3bgHsKNWoDHAB8Doz9sYUYEgEcHJuUc3RZ6tuAJopZaQMcADwI+vbvZUOVSKpGGwKgBq49g7eD8b2XAIcUKqZMsAmwPrzQPXy4zBE420BoJ66uQGvXrxeM/prtTOmDrGOavfzqsH49NNxeCEV/TPeNoDWybnFmnTGt+sGwGlV3fDvWZ8ipicODHcFoCmVYkNb3QLYfOHf1ivTMoCmVCIcX0FKdRLg5TP+U6MybQHQOjuz8AEIXKUDAJWFJ6HlZsPbAoBaFvwnAc++atd4WeDebvD+ETvj2wKAPltimMMyz4qywLWklMxz91bPjxxBN7sKoAWcY6KAZ7edP3X2mzzGXtLf6gkAilOlNGWIhvQMwIlSemX6CsBKKSNl+hLASCkzZfoWAAVpIgvsbVQzZfoawE0iGEDEb6ClRLBCCQD6/kecjMmmB4ZEWex3gHAqmjA9cPrG8sA+hMWb6AVAOBkDkWRMnHo4NdCp78fBwcHBIf67/ALECpwyy5gUBAAAAABJRU5ErkJggg=="></a>
+            <a href="tel:6300358142"><img
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAABhUlEQVR4nO2UzytEURTHP36NQizIwqykbG2URBR7Zek/YDD/iZInG0u/krK1saLGWDBTsiIlYqOkkV6Sp1vn1W168969ui+z8K3Tu53OOZ937o8D/6pTtQJ5oAi8i6n1EpBJC5oFykBQw0oS47zTcgw0tEvXnecNoKEtugSfW4DPXIIrFmAV60yBpf1Jx28uwUULcMEleNkCnHP9jksG0Is0Jlg2Aa6gfaSkjMzlgly4iqxzac7qutcksAs8AJ/AE7APTKQFbAY2Ey7fOtBoW3QKGIqJSYIGYmsmwH5gFXiRJB/wgBGgXYsb1wqvAPMx4G9grBawSwBfCX+vdgE509DXCzQApzF521HQAeDOcNu6JUePnxHfSUzefRT4ymI8tkiOr/mugU5gLybPjwI/W4B7JOexyn8EdABbwAFwbNLxHPBqCJ6WnKjuDoE2re5C0hn/RqNyW6vhN8AsMCidh7davQJn8gx3yXMJVWqSolGdh7ZhO7lspIaDOvNb4EO+O8CwHvUDJKkok83BydEAAAAASUVORK5CYII=">
+            </a>
+            <a target="_blank" href="https://www.linkedin.com/in/m-viswanath-gowda/"><img
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAByElEQVR4nO2ZP0/CQBjG22scXI2Tiauy+glc3MC4+iX8DA6G9IiDJsYBBhdNHJwcNRGIHY3xjoBCgkTEAUP8A63yt7ymBVQEIq2mvSb3JM/UN5fnd+97N1wFgYuLi4tpSTJdQTKJI5lqCFNwxDLVRExjkkyW/xRexAQ7FhoPt4hJ0P7OuxwedS2FSMAygDk2DIRHRhdkGrUOgInqdnDUs0wqNgAYCI6//G8AvkgazgsaaA0dlIIG8+G0twCUggbfFb/XvAWgNfQ+ALWuewtA8XoHfJG0CWF0IpZXYS584y0A5JIFDoA7OzFM43yf3b2G7YsSpEpVqDbb8FprmaO4dvoAk5sJtgEW9jLw+NaEUbosvsPMTopdgOxLHX5TLK+CxCrAuPIf5dgE0Ntgzv/S4S2sHucheqcOrdtPPrMJsK4U+2omQgk4yVUG6jJPNTYBpreTA+ssHmQH6sq1FnsA7R/fe57aSo5d63oH7K6FOADmHTDFRwjzQ0z5LYT4NWpRo24Otyx4+mkR07JlAON9noHgYFjE9MwygPFzwe3gqGsJX/ktA3S6QIJuhxcx2bAV/rMTIRIw3uedPRNENcbG9s5zcXFxCU7pA5Jwntel+S2tAAAAAElFTkSuQmCC"></a>
+        </div>
+        <hr style="width: 150px;">
+        <p class="title">Get the Profile</p>
+        <div>
+            <a target="_blank" [attr.href]="resume.basicDeatails.resume" download title="download the resume">
+            <img
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA4UlEQVR4nO2YQQ6CMBBFe7u5BefxBnYhGzyBXEJNDIYlK1241wtMx4ywUWsIKYWRzk9+0szq5c8vJDXmHwWrPc1hMwRwaoECBkoTDFVaCaIjOtwcFTW+zGeeiQFkIHvCN/NMDCCn9glY1CgbcOsBzNbV19+CZ9EBxa8YpV+SGIIxAS93R7sGaVO1Lhuk68PJ6KCvf7bzMaCHowBycr/gbGdfkpMB8lr7AMtmRsC86gfMzzj/dzCGQAElJOjrFAy0djCWIIlLkmkHl77imALtYKDSWHFMgQIGankJguRHdCNIT9jSeoe7c7w1AAAAAElFTkSuQmCC"></a>
+            <a (click)="share()" title="share the profile" style="cursor: pointer;"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                    <path fill="currentColor"
+                        d="m13.576 17.271l-5.11-2.787a3.5 3.5 0 1 1 0-4.968l5.11-2.787a3.5 3.5 0 1 1 .958 1.755l-5.11 2.787a3.514 3.514 0 0 1 0 1.457l5.11 2.788a3.5 3.5 0 1 1-.958 1.755Z" />
+                </svg></a>
+        </div>
+        <hr style="width: 100px;">
+        <p class="title">Thank You</p>
+    </div>
+</div>
