@@ -1,5 +1,6 @@
 import { Component, ElementRef, HostListener, OnInit, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
 import * as data from '../data/data.json'
+import { DataService } from '../data.service';
 
 
 @Component({
@@ -25,8 +26,7 @@ export class LayoutComponent implements OnInit {
     currentPage: '1',
     currentTab: '0'
   };
-  resume = data;
-
+  resume: any
   showSVG = {
     homesvgHover: false,
     aboutsvgHover: false,
@@ -36,12 +36,18 @@ export class LayoutComponent implements OnInit {
   // currentIndex: number = 0;
   renderCount = 0;
   innerWidth!: number;
-  change:boolean = false;
-  menuOpt:any
+  change: boolean = false;
+  menuOpt: any
+  clientdata = {
+    reputation: 0,
+    views: 0
+  };
 
-  constructor(private vref:ViewContainerRef) { }
+  constructor(private vref: ViewContainerRef, private data: DataService) { }
 
   ngOnInit(): void {
+    this.getresume()
+    this.getClientdata()
     this.innerWidth = window.innerWidth;
     let scrollvalue = localStorage.getItem('scrollPosition');
     this.renderCount = 0
@@ -62,7 +68,7 @@ export class LayoutComponent implements OnInit {
     const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
     const windowHeight = window.innerHeight || document.documentElement.clientHeight;
 
-    if (scrollPosition > 30) { 
+    if (scrollPosition > 30) {
       this.isScrollReached.headerTitle = false;
     } else {
       this.isScrollReached.headerTitle = true;
@@ -75,24 +81,24 @@ export class LayoutComponent implements OnInit {
     } else {
       this.isScrollReached.toolBar = false
     }
-    if(scrollPosition >= 460 && scrollPosition <= 764){
+    if (scrollPosition >= 460 && scrollPosition <= 764) {
       this.renderCount++
       console.log(this.renderCount, 'rendercount')
-      if(this.renderCount == 1){
+      if (this.renderCount == 1) {
         this.triggerReRender();
       }
-    }else {
+    } else {
       this.renderCount = 0
     }
-    if(windowHeight == scrollPosition || (windowHeight - 30) * 2 > scrollPosition){
+    if (windowHeight == scrollPosition || (windowHeight - 30) * 2 > scrollPosition) {
       this.isScrollReached.currentTab = '2'
-    }else if((windowHeight - 30) * 2 < scrollPosition && (windowHeight - 30) * 3 > scrollPosition){
+    } else if ((windowHeight - 30) * 2 < scrollPosition && (windowHeight - 30) * 3 > scrollPosition) {
       this.isScrollReached.currentTab = '3'
-    }else if((windowHeight - 30) * 3 < scrollPosition && (windowHeight - 30) * 4 > scrollPosition){
+    } else if ((windowHeight - 30) * 3 < scrollPosition && (windowHeight - 30) * 4 > scrollPosition) {
       this.isScrollReached.currentTab = '4'
-    }else if((windowHeight - 30) * 4 < scrollPosition && (windowHeight - 30) * 5 > scrollPosition){
+    } else if ((windowHeight - 30) * 4 < scrollPosition && (windowHeight - 30) * 5 > scrollPosition) {
       this.isScrollReached.currentTab = '5'
-    }else if((windowHeight - 30) * 5 < scrollPosition && (windowHeight - 30) * 6 > scrollPosition){
+    } else if ((windowHeight - 30) * 5 < scrollPosition && (windowHeight - 30) * 6 > scrollPosition) {
       this.isScrollReached.currentTab = '6'
     }
   }
@@ -102,7 +108,7 @@ export class LayoutComponent implements OnInit {
   }
 
   scrollToElement(pgNo: any) {
-    if(this.menuOpt){
+    if (this.menuOpt) {
       this.menuOpt.destroy();
       this.change = false
     }
@@ -122,20 +128,68 @@ export class LayoutComponent implements OnInit {
     } else if (pgNo === 5) {
       this.isScrollReached.currentPage = '5'
       this.usecases.nativeElement.scrollIntoView({ behavior: 'smooth' });
-    } else if(pgNo === 6){
+    } else if (pgNo === 6) {
       this.isScrollReached.currentPage = '6'
-      this.contactPage.nativeElement.scrollIntoView({behavior: 'smooth'});
+      this.contactPage.nativeElement.scrollIntoView({ behavior: 'smooth' });
     }
   }
- 
+
   triggerReRender() {
     this.currentView = false
     setTimeout(() => {
       this.currentView = true
     }, 0)
   }
-  mobileMenu( event: any){
+  mobileMenu(event: any) {
     this.change ? this.change = false : this.change = true;
     this.change ? this.menuOpt = this.vref.createEmbeddedView(this.menuOptTemplt) : this.menuOpt.destroy();
-   }
+  }
+  getresume() {
+    this.data.getresume().subscribe((res: any) => {
+      for (const key in res) {
+        this.resume = res[key]
+        console.log(this.resume)
+      }
+    })
+  }
+  // getClientdata(){
+  //   let data :any
+  //   this.data.clientdata$.subscribe((clientdata) =>{
+  //       // for(const i of clientdata){
+  //       //   if(i.view || i.reputation){
+  //       //     this.clientdata.views = +i.view
+  //       //     this.clientdata.reputation = +i.reputation
+  //       //   }
+  //       // }
+  //       data = clientdata
+  //       console.log(clientdata)
+  //   });
+  //   if(data){
+
+  //     for(const key in data){
+  //         if(key == 'view'){
+  //           this.clientdata.views = +data[key]
+  //         }else if(key == 'reputation'){
+  //           this.clientdata.reputation = +data[key]
+  //         }
+  //       }
+  //       console.log(this.clientdata)
+  //   }
+  // }
+  getClientdata() {
+    this.data.clientdata$.subscribe((clientdata) => {
+      console.log(clientdata);
+  
+      for (const key in clientdata) {
+        if (key === 'view') {
+          this.clientdata.views = +clientdata[key];
+        } else if (key === 'reputation') {
+          this.clientdata.reputation = +clientdata[key];
+        }
+      }
+  
+      console.log(this.clientdata);
+    });
+  }
+  
 }

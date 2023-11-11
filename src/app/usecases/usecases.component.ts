@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import data from '../data/data.json'
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-usecases',
@@ -7,11 +8,18 @@ import data from '../data/data.json'
   styleUrls: ['./usecases.component.css']
 })
 export class UsecasesComponent implements OnInit {
-  usecases = data.usecases
+  usecases:any;
  
-  constructor() { }
+  constructor(private data:DataService) { }
 
   ngOnInit(): void {
+    this.getresume()
   }
-
+   getresume(){
+    this.data.getresume().subscribe((res: any) => {
+      for(const key in res){
+        this.usecases = res[key].usecases
+      }
+    })
+  }
 }

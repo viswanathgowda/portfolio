@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { SharedService } from '../shared.service';
 import data from '../data/data.json'
+import { DataService } from '../data.service';
 
 
 @Component({
@@ -10,22 +11,18 @@ import data from '../data/data.json'
 })
 export class TimelineComponent implements OnInit {
   viewIn: any
-  data = data.education
-  constructor(private shared: SharedService) { }
+  data:any
+  constructor(private rdata:DataService) { }
 
   ngOnInit(): void {
-    // let callserv: boolean = true
-    // this.shared.getReloadObservable().subscribe((data:any) =>{
-    //   this.viewIn = data
-    //   if(data === '2' && callserv){
-    //     callserv = false
-    //     console.log(data)
-    //     // this.ngOnInit();
-        
-    //   }
-    // })
-    
+    this.getresume()
   }
-
+  getresume(){
+    this.rdata.getresume().subscribe((res: any) => {
+      for(const key in res){
+        this.data = res[key].education
+      }
+    })
+  }
 
 }

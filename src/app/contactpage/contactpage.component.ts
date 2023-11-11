@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Loader } from '@googlemaps/js-api-loader';
 import { styles } from '../mapstyles';
 import * as data from '../data/data.json'
+import { DataService } from '../data.service';
 
 
 @Component({
@@ -10,8 +11,7 @@ import * as data from '../data/data.json'
   styleUrls: ['./contactpage.component.css']
 })
 export class ContactpageComponent implements OnInit {
-
-  resume = data;
+  resume: any
   arrlglt = [
     {
       icon: 'assets/young-bearded-man-with-striped-shirt.jpg',
@@ -31,9 +31,10 @@ export class ContactpageComponent implements OnInit {
   latitude: any;
   longitude: any;
   like: boolean = false;
-  constructor() { }
+  constructor(private rdata: DataService) { }
 
   ngOnInit(): void {
+    this.getresume()
     this.getcurrentLocation()
     this.like = false;
   }
@@ -55,10 +56,9 @@ export class ContactpageComponent implements OnInit {
       apiKey: 'AIzaSyCtfYgcatV9vr5B5LhVWFE_2GFgI2IRU_Q'
     })
     loader.load().then(() => {
-      console.log(this.arrlglt)
       this.map = new google.maps.Map(document.getElementById("map")!, {
         center: { lat: this.arrlglt[0].latd, lng: this.arrlglt[0].langtd },
-        zoom: 16,
+        zoom: 20,
         styles: styles
       })
       if(this.arrlglt.length){
@@ -103,5 +103,12 @@ export class ContactpageComponent implements OnInit {
       alert('sharing not supported for this device')
     }
   }
-
+  getresume(){
+    this.rdata.getresume().subscribe((res: any) => {
+      for(const key in res){
+        this.resume = res[key]
+        console.log(res)
+      }
+    })
+  }
 }

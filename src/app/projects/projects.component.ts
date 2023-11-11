@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import data from '../data/data.json'
+import { DataService } from '../data.service';
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
@@ -8,14 +9,13 @@ import data from '../data/data.json'
 export class ProjectsComponent implements OnInit {
 
   currentIndex: number = 0;
-
-  projects = data.projects
+  projects: any;
   
 
-  constructor() { }
+  constructor(private data: DataService) { }
 
   ngOnInit(): void {
-   
+   this.getresume()
   }
 
   moveLeft() {
@@ -82,8 +82,13 @@ export class ProjectsComponent implements OnInit {
         });
       }
     }, 0)
-
-
+  }
+  getresume(){
+    this.data.getresume().subscribe((res: any) => {
+      for(const key in res){
+        this.projects = res[key].projects
+      }
+    })
   }
 }
 

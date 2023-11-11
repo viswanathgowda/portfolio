@@ -16,6 +16,14 @@
                 <li class="listItem" [ngClass]="isScrollReached.currentTab == '5' ? 'listItemActive' : ''" (click)="scrollToElement(5)">Usecases</li>
                 <li class="listItem" [ngClass]="isScrollReached.currentTab == '6' ? 'listItemActive' : ''" (click)="scrollToElement(6)">Contact me</li>            
             </ul>
+             <div class="toolBarleftTitle">
+                <!-- <div class="titleLoader"><span class="titleLoaderbraces">{{'{'}}</span>Vishwa<span class="titleLoaderbraces">{{'}'}}</span>
+                </div> -->
+                <ul class="list">
+                    <li class="listItem">Views {{clientdata.views}}</li>
+                    <li class="listItem">Reputation {{clientdata.reputation}}</li>
+                </ul>
+            </div>
         </div>
     </div>
     <div *ngIf="innerWidth < 600" class="mobileMenu">
@@ -1333,13 +1341,17 @@
         </div>
     </div>
     <ng-template  #menuOptTemplt>
-        <ul class="menulist" *ngIf="innerWidth < 600">
-            <li class="menulistItem" (click)="scrollToElement(1)">Home</li>
-            <li class="menulistItem" (click)="scrollToElement(2)">About</li>
-            <li class="menulistItem" (click)="scrollToElement(3)">Skills</li>
-            <li class="menulistItem" (click)="scrollToElement(4)">Projetcs</li>
-            <li class="menulistItem" (click)="scrollToElement(5)">Usecases</li>
-            <li class="menulistItem" (click)="scrollToElement(6)">Contact Me</li>
-        </ul>
+        <div class="menulist" *ngIf="innerWidth < 600">
+            <ul class="mobmenu" >
+                <li class="menulistItem">Views<div>{{clientdata.views}}</div></li>
+                <li class="menulistItem">Reputation<div>{{clientdata.reputation}}</div></li>
+                <li class="menulistItem" (click)="scrollToElement(1)">Home</li>
+                <li class="menulistItem" (click)="scrollToElement(2)">About</li>
+                <li class="menulistItem" (click)="scrollToElement(3)">Skills</li>
+                <li class="menulistItem" (click)="scrollToElement(4)">Projetcs</li>
+                <li class="menulistItem" (click)="scrollToElement(5)">Usecases</li>
+                <li class="menulistItem" (click)="scrollToElement(6)">Contact Me</li>
+            </ul>
+        </div>
     </ng-template>
 </div>

@@ -13,6 +13,13 @@ import { UsecasesComponent } from './usecases/usecases.component';
 import { ContactpageComponent } from './contactpage/contactpage.component';
 import { SafeUrlPipe } from './safe-url.pipe';
 import { ScrollableDirective } from './scrollable.directive';
+import { HttpClientModule } from '@angular/common/http'
+
+import { environment } from 'src/environments/environment';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+// import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
+// import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 
 
 @NgModule({
@@ -30,7 +37,10 @@ import { ScrollableDirective } from './scrollable.directive';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule
   ],
   providers: [SharedService],
   bootstrap: [AppComponent]

@@ -230,7 +230,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     height: 100%;
     margin-left: 0 !important;
     padding-left: 0 !important;
@@ -242,12 +242,28 @@
     position: fixed;
     width: 100%;
 }
+.mobmenu{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
 .menulistItem{
-    padding: 10px;
+    /* padding: 10px;
     cursor: pointer;
     font-family: math;
     text-transform: uppercase;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s; */
+    width: calc(50% - 100px);
+    margin: 5px;
+    box-sizing: border-box;
+    background-color: #dccf65;
+    padding: 20px;
+    border-radius: 13px;
+    text-align: center;
 }
 .containerSkills{
     height: 100%;
@@ -408,6 +424,7 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        flex-wrap: wrap;
     }
     .list {
         list-style: none;
@@ -416,6 +433,7 @@
         flex-direction: row;
         justify-content: flex-end;
         margin-top: revert;
+        align-items: center;
     }
     .listItem {
         /* margin: 0.5rem 1rem 0.5rem 1rem; */
@@ -426,6 +444,7 @@
         text-transform: uppercase;
         transition: background-color 0.3s;
         font-size: small;
+        text-align: center;
     }
     .listItem:hover{
         background-color: #f9f9ff;
