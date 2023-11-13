@@ -1,8 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { computeStyles } from '@popperjs/core';
-import { env } from 'process';
-import { Observable, Subject, map, of, shareReplay, tap } from 'rxjs';
+import { Observable, Subject, map, of, shareReplay, switchMap, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -60,78 +58,70 @@ export class DataService {
     // Get the current timezone
     this.currentTimeZone = (Intl.DateTimeFormat().resolvedOptions().timeZone).toString()
   }
-  getclientdata(){
-    // if nothing is cached, make a new API call and cache the observable
-    const url = `${this.baseUrl}/${'client'}.json`;
+  getclientdata() {
+    const url = `${this.baseUrl}/client.json`;
+
     this.http.get<any>(url).pipe(
-      map(res => {
+      switchMap(res => {
+        // Initialize data with default values
+        let data = {
+          views: 0,
+          reputation: 0
+        };
+
+        // Calculate views and reputation from the response data
         for (const key in res) {
-          if (res[key].ipAddress == this.ipAddress) {
-            let resdate = new Date(res[key].currentDate)
-            if ((new Date().getTime() - resdate.getTime()) / 3600000 < 24) {
-              let clientdata = {
-                  ipAddress: this.ipAddress,
-                  view: res[key].view,
-                  currentDate: this.currentDate,
-                  currentTimeZone: this.currentTimeZone,
-                  reputation: (res[key].reputation ? 1+res[key].reputation : 1)
-                }
-              this.updateclientdat(clientdata, key);
-            } else {
-              let clientdata = {
-                ipAddress: this.ipAddress,
-                view: 1+res[key].view,
-                currentDate: this.currentDate,
-                currentTimeZone: this.currentTimeZone,
-                reputation: (res[key].reputation ? 1+res[key].reputation : 1)
-              }
-              this.updateclientdat(clientdata, key);
-            }
-          } else {
-            // POST API for new client
-            let clientdata = {
-              ipAddress: this.ipAddress,
-              view: 1,
-              currentDate: this.currentDate,
-              currentTimeZone: this.currentTimeZone,
-            }
-            console.log(clientdata)
-            if(clientdata.ipAddress) this.sendclientdata(clientdata)
+          if (res[key].view || res[key].reputation) {
+            data.views += res[key].view || 0;
+            data.reputation += res[key].reputation || 0;
           }
         }
+
+        // If client does not exist, increment views and reputation
+        if (!Object.keys(res).some(key => res[key].ipAddress === this.ipAddress)) {
+          data.views += 1;
+          // data.reputation += 1;
+          // Send new client data
+          let clientdata = {
+            ipAddress: this.ipAddress,
+            view: 1,
+            currentDate: this.currentDate,
+            currentTimeZone: this.currentTimeZone,
+          };
+          return this.sendclientdata(clientdata).pipe(
+            map(() => data) // Assuming sendclientdata returns an observable
+          );
+        }
+
+        // If client exists, update views and reputation
+        const existingClientKey: any = Object.keys(res).find(key => res[key].ipAddress === this.ipAddress);
+        const existingClient = res[existingClientKey];
+        const resdate = new Date(existingClient.currentDate);
+        const hoursDifference = (new Date().getTime() - resdate.getTime()) / 3600000;
+
         let clientdata = {
           ipAddress: this.ipAddress,
-          view: 1,
+          view: existingClient.view + (hoursDifference < 24 ? 0 : 1),
           currentDate: this.currentDate,
           currentTimeZone: this.currentTimeZone,
+          reputation: (existingClient.reputation ? existingClient.reputation + 1 : 1),
+        };
 
-        }
-        if(res == null){
-          if(clientdata.ipAddress) this.sendclientdata(clientdata)
-        }
+        return this.updateclientdat(clientdata, existingClientKey).pipe(
+          map(() => data) // Assuming updateclientdat returns an observable
+        );
       })
-    ).subscribe( () => console.log('cleintdatarecived'))
+    ).subscribe(data => {
+      this.clientdata.next(data);
+      console.log('client data received');
+    });
   }
-
-  sendclientdata(clientdata: { ipAddress: any; view: number; currentDate: string; currentTimeZone: string; reputation? : any}) {
-    // if nothing is cached, make a new API call and cache the observable
-    const url = `${this.baseUrl}/${'client'}.json`;
-    this.http.post<any>(url, clientdata).pipe(
-      // use shareReplay to multicast the observable to multiple subscribers
-      shareReplay(1),
-      // use tap to cache the data when the observable emits
-      tap()
-    ).subscribe(data => console.log(''))
+  sendclientdata(clientdata: any): Observable<any> {
+    // Assuming some HTTP request here
+    return this.http.post<any>(`${this.baseUrl}/client.json`, clientdata);
   }
-  updateclientdat(clientdata: { ipAddress: any; currentDate: string; currentTimeZone: string; reputation: number; view?: number; }, documentId: any) {
-    const url = `${this.baseUrl}/${'client'}/${documentId}.json`;
-    this.http.put<any>(url, clientdata).pipe(
-      // use shareReplay to multicast the observable to multiple subscribers
-      shareReplay(1),
-      // use tap to cache the data when the observable emits
-      tap((data)=>{
-        this.clientdata.next(data)
-      })
-    ).subscribe()
+  updateclientdat(clientdata: any, key: string): Observable<any> {
+    // Assuming some HTTP request here
+    return this.http.put<any>(`${this.baseUrl}/client/${key}.json`, clientdata);
   }
 }

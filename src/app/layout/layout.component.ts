@@ -178,17 +178,7 @@ export class LayoutComponent implements OnInit {
   // }
   getClientdata() {
     this.data.clientdata$.subscribe((clientdata) => {
-      console.log(clientdata);
-  
-      for (const key in clientdata) {
-        if (key === 'view') {
-          this.clientdata.views = +clientdata[key];
-        } else if (key === 'reputation') {
-          this.clientdata.reputation = +clientdata[key];
-        }
-      }
-  
-      console.log(this.clientdata);
+      this.clientdata = clientdata
     });
   }
   
