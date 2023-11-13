@@ -4,19 +4,6 @@
 
 export const environment = {
   production: false,
-  
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
- firebaseConfig : {
-  apiKey: "AIzaSyCZrDHXEduzSqCvFYmLsWrIzIYhOmRADm4",
-  authDomain: "portfolio-2cdde.firebaseapp.com",
-  databaseURL: "https://portfolio-2cdde-default-rtdb.firebaseio.com",
-  projectId: "portfolio-2cdde",
-  storageBucket: "portfolio-2cdde.appspot.com",
-  messagingSenderId: "744483857936",
-  appId: "1:744483857936:web:4f26000a0a248f1381cc95",
-  measurementId: "G-HDTD05ZKSC"
-},
 firebaseUrl : {
   baseUrl: 'https://portfolio-2cdde-default-rtdb.firebaseio.com'
 },

@@ -2,12 +2,10 @@
     z-index: 999;
     position: fixed;
     width: 100%;
-    /* top: -72px; */
     left: 0;
     right: 0;
     top: 0;
     background: #fff;
-    /* transform: translateY(70px); */
     transition: transform 500ms ease, background 500ms ease;
     -webkit-transition: transform 500ms ease, background 500ms ease;
     box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.1);
@@ -15,178 +13,6 @@
 
 .toolBarhide {
     display: none;
-}
-/* .toolBaralign{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-} */
-/* .toolBarleftTitle{
-    margin-left: 10rem;
-    font-size: 14px;
-    font-family: "Roboto", sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 2.1px;
-    font-weight: 600;
-    cursor: pointer;
-    padding-left: 20px;
-    padding-right: 20px; 
-}
-.toolBarleftTitle:hover{
-    background-color: #f9f9ff;
-    padding-left: 20px;
-    padding-right: 20px;    
-    border-radius: 10px;
-} */
-.titleLoader {
-    color: #000;
-    font-family: Consolas, Menlo, Monaco, monospace;
-    font-weight: bold;
-    opacity: 0.8;
-  }
-  
-.titleLoader span {
-    display: inline-block;
-    animation: pulse_414 0.4s alternate infinite ease-in-out;
-}
-  
-.titleLoader span:nth-child(odd) {
-    animation-delay: 0.4s;
-}
-  
-@keyframes pulse_414 {
-    to {
-      transform: scale(0.8);
-      opacity: 0.5;
-    }
-}
-/* .titleLoaderbraces{
-    font-size: 25px;
-} */
-
-/* .list {
-    list-style: none;
-    display: flex;
-    margin-right: 5rem;
-    flex-direction: row;
-    justify-content: flex-end;
-    margin-top: revert;
-}
-.listItem {
-    margin-left: 1rem;
-    padding: 10px;
-    cursor: pointer;
-    font-family: math;
-    text-transform: uppercase;
-    transition: background-color 0.3s;
-}
-.listItem:hover{
-    background-color: #f9f9ff;
-    padding: 10px;
-    border-radius: 10px;
-}
-.listItemActive{
-    background-color: #f9f9ff;
-    padding: 10px;
-    border-radius: 10px;
-}
-.homesvgHover{
-    position: absolute;
-    height: 100px;
-    top: 50%;
-    left: 53.2%;
-    cursor: pointer;
-} */
-.aboutsvgHover{
-    position: absolute;
-    height: 100px;
-    top: 50%;
-    left: 59.1%;
-    cursor: pointer;
-}
-.downloadPdf{
-    position: absolute;
-    height: 100px;
-    top: 50%;
-    left: 91%;
-    cursor: pointer;
-}
-
-
-
-.scale-up-bl {
-    -webkit-animation: scale-up-bl 0.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) 0.5s both;
-    animation: scale-up-bl 0.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) 0.5s both;
-}
-
-@-webkit-keyframes scale-up-bl {
-    0% {
-        -webkit-transform: scale(0.5);
-        transform: scale(0.5);
-        -webkit-transform-origin: 0% 100%;
-        transform-origin: 0% 100%;
-    }
-
-    100% {
-        -webkit-transform: scale(1);
-        transform: scale(1);
-        -webkit-transform-origin: 0% 100%;
-        transform-origin: 0% 100%;
-    }
-}
-
-@keyframes scale-up-bl {
-    0% {
-        -webkit-transform: scale(0.5);
-        transform: scale(0.5);
-        -webkit-transform-origin: 0% 100%;
-        transform-origin: 0% 100%;
-    }
-
-    100% {
-        -webkit-transform: scale(1);
-        transform: scale(1);
-        -webkit-transform-origin: 0% 100%;
-        transform-origin: 0% 100%;
-    }
-}
-
-.scale-up-ver-top {
-    -webkit-animation: scale-up-ver-top 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-    animation: scale-up-ver-top 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-}
-
-@-webkit-keyframes scale-up-ver-top {
-    0% {
-        -webkit-transform: scaleY(0.4);
-        transform: scaleY(0.4);
-        -webkit-transform-origin: 100% 0%;
-        transform-origin: 100% 0%;
-    }
-
-    100% {
-        -webkit-transform: scaleY(1);
-        transform: scaleY(1);
-        -webkit-transform-origin: 100% 0%;
-        transform-origin: 100% 0%;
-    }
-}
-
-@keyframes scale-up-ver-top {
-    0% {
-        -webkit-transform: scaleY(0.4);
-        transform: scaleY(0.4);
-        -webkit-transform-origin: 100% 0%;
-        transform-origin: 100% 0%;
-    }
-
-    100% {
-        -webkit-transform: scaleY(1);
-        transform: scaleY(1);
-        -webkit-transform-origin: 100% 0%;
-        transform-origin: 100% 0%;
-    }
 }
 .mobileMenu{
     z-index: 9999;
@@ -252,11 +78,6 @@
     margin-top: 40px;
 }
 .menulistItem{
-    /* padding: 10px;
-    cursor: pointer;
-    font-family: math;
-    text-transform: uppercase;
-    transition: background-color 0.3s; */
     width: calc(50% - 100px);
     margin: 5px;
     box-sizing: border-box;

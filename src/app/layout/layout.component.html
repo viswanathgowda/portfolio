@@ -1,24 +1,16 @@
 <div>
     <div [ngClass]="isScrollReached.toolBar ? 'toolBar' : 'toolBarhide'">
-
         <div class="toolBaralign" *ngIf="innerWidth > 600px">
-            <!-- <div class="toolBarleftTitle">
-                <div class="titleLoader"><span class="titleLoaderbraces">{{'{'}}</span>Vishwa<span class="titleLoaderbraces">{{'}'}}</span>
-                </div>
-            </div> -->
             <ul class="list">
                 <li class="listItem" (mouseenter)="showSVG.homesvgHover = true"
                     (mouseleave)="showSVG.homesvgHover = false"  [ngClass]="isScrollReached.currentTab == '1' ? 'listItemActive' : ''"  (click)="scrollToElement(1)">Home</li>
-                <li class="listItem" [ngClass]="isScrollReached.currentTab == '2' ? 'listItemActive' : ''" (mouseenter)="showSVG.aboutsvgHover = true"
-                    (mouseleave)="showSVG.aboutsvgHover = false" (click)="scrollToElement(2)">About</li>
+                <li class="listItem" [ngClass]="isScrollReached.currentTab == '2' ? 'listItemActive' : ''" (click)="scrollToElement(2)">About</li>
                 <li class="listItem" [ngClass]="isScrollReached.currentTab == '3' ? 'listItemActive' : ''" (click)="scrollToElement(3)">skills</li>
                 <li class="listItem" [ngClass]="isScrollReached.currentTab == '4' ? 'listItemActive' : ''" (click)="scrollToElement(4)">Projects</li>
                 <li class="listItem" [ngClass]="isScrollReached.currentTab == '5' ? 'listItemActive' : ''" (click)="scrollToElement(5)">Usecases</li>
                 <li class="listItem" [ngClass]="isScrollReached.currentTab == '6' ? 'listItemActive' : ''" (click)="scrollToElement(6)">Contact me</li>            
             </ul>
              <div class="toolBarleftTitle">
-                <!-- <div class="titleLoader"><span class="titleLoaderbraces">{{'{'}}</span>Vishwa<span class="titleLoaderbraces">{{'}'}}</span>
-                </div> -->
                 <ul class="list">
                     <li class="listItem">Views {{clientdata.views}}</li>
                     <li class="listItem">Reputation {{clientdata.reputation}}</li>
