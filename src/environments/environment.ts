@@ -16,6 +16,12 @@ export const environment = {
   messagingSenderId: "744483857936",
   appId: "1:744483857936:web:4f26000a0a248f1381cc95",
   measurementId: "G-HDTD05ZKSC"
+},
+firebaseUrl : {
+  baseUrl: 'https://portfolio-2cdde-default-rtdb.firebaseio.com'
+},
+ipAddress : {
+  ipUrl :'https://api.ipregistry.co/?key=nn09u3qznvjjdvd8'
 }
 };
 

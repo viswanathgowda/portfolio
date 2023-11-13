@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { computeStyles } from '@popperjs/core';
+import { env } from 'process';
 import { Observable, Subject, map, of, shareReplay, tap } from 'rxjs';
-
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,8 @@ export class DataService {
   ipAddress: any;
   currentDate!: string;
   currentTimeZone!: string;
-  baseUrl: any = 'https://portfolio-2cdde-default-rtdb.firebaseio.com';
+  baseUrl: any = environment.firebaseUrl.baseUrl;
+  apiUrl: any = environment.ipAddress.ipUrl;
 
   constructor(private http: HttpClient) {
     this.getresume()
@@ -32,7 +34,8 @@ export class DataService {
       return this.data$;
     } else {
       // if nothing is cached, make a new API call and cache the observable
-      this.data$ = this.http.get<any>('https://portfolio-2cdde-default-rtdb.firebaseio.com/resume.json').pipe(
+      const url = `${this.baseUrl}/${'resume'}.json`;
+      this.data$ = this.http.get<any>(url).pipe(
         // use shareReplay to multicast the observable to multiple subscribers
         shareReplay(1),
         // use tap to cache the data when the observable emits
@@ -43,7 +46,7 @@ export class DataService {
   }
 
   getIpaddress() {
-    fetch('https://api.ipregistry.co/?key=nn09u3qznvjjdvd8')
+    fetch(this.apiUrl)
       .then(response => response.json())
       .then(data => {
         this.ipAddress = data.ip;
