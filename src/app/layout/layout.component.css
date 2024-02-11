@@ -1,591 +1,598 @@
 .toolBar {
-    z-index: 999;
-    position: fixed;
-    width: 100%;
-    left: 0;
-    right: 0;
-    top: 0;
-    background: #fff;
-    transition: transform 500ms ease, background 500ms ease;
-    -webkit-transition: transform 500ms ease, background 500ms ease;
-    box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  background: #fff;
+  transition: transform 500ms ease, background 500ms ease;
+  -webkit-transition: transform 500ms ease, background 500ms ease;
+  box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.1);
 }
 
 .toolBarhide {
-    display: none;
+  display: none;
 }
-.mobileMenu{
-    z-index: 9999;
-    position: fixed;
-    width: 100%;
-    left: 0;
-    right: 0;
-    top: 0;
-    transition: transform 500ms ease, background 500ms ease;
-    -webkit-transition: transform 500ms ease, background 500ms ease;
-    display: flex;
-    justify-content:space-between;
-    align-items: center;
-    margin-top: 0 !important;
+.mobileMenu {
+  z-index: 9999;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  transition: transform 500ms ease, background 500ms ease;
+  -webkit-transition: transform 500ms ease, background 500ms ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0 !important;
 }
 .containerMobileMenu {
-    display: inline-block;
-    cursor: pointer;
-    margin: 0.3rem;
-  }
-  
-  .bar1, .bar2, .bar3 {
-    width: 30px;
-    height: 3px;
-    background-color: #333;
-    margin: 6px 0;
-    transition: 0.4s;
-  }
-  
-  .changeb1 {
-    transform: translate(0, 6px) rotate(-45deg);
-  }
-  
-  .changeb2 {opacity: 0;}
-  
-  .changeb3 {
-    transform: translate(0, -12px) rotate(45deg);
-  }
-.menulist{
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    height: 100%;
-    margin-left: 0 !important;
-    padding-left: 0 !important;
-    z-index: 999;
-    top: 50%;
-    left:50%;
-    transform: translate(-50%, -50%);
-    background-color: #90B7F9;
-    position: fixed;
-    width: 100%;
+  display: inline-block;
+  cursor: pointer;
+  margin: 0.3rem;
 }
-.mobmenu{
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin-top: 40px;
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 30px;
+  height: 3px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
 }
-.menulistItem{
-    width: calc(50% - 100px);
-    margin: 5px;
-    box-sizing: border-box;
-    background-color: #dccf65;
-    padding: 20px;
-    border-radius: 13px;
-    text-align: center;
+
+.changeb1 {
+  transform: translate(0, 6px) rotate(-45deg);
 }
-.containerSkills{
-    height: 100%;
-    width: 100%;
-    min-height: 100dvh;
-    display: flex;
-    justify-content: center;
+
+.changeb2 {
+  opacity: 0;
 }
-.containerProjects{
-    background-color: #fff;
-    height: 100%;
-    width: 100%;
-    min-height: 100dvh;
-    display: flex;
-    justify-content: center;
+
+.changeb3 {
+  transform: translate(0, -12px) rotate(45deg);
 }
-.containerUsecases{
-    min-height: 100vh;
-    display: flex;
+.menulist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #90b7f9;
+  position: fixed;
+  width: 100%;
+}
+.mobmenu {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+.menulistItem {
+  width: calc(50% - 100px);
+  margin: 5px;
+  box-sizing: border-box;
+  background-color: #dccf65;
+  padding: 20px;
+  border-radius: 13px;
+  text-align: center;
+}
+.containerSkills {
+  height: 100%;
+  width: 100%;
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+}
+.containerProjects {
+  background-color: #fff;
+  height: 100%;
+  width: 100%;
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+}
+.containerUsecases {
+  min-height: 100vh;
+  display: flex;
 }
 /* landing page svg styles*/
 
 #introsvg {
-    position: -webkit-sticky !important;
-    position: sticky !important;
+  position: -webkit-sticky !important;
+  position: sticky !important;
 }
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-    .containerMain {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding-bottom: 15px;
-        min-height: 100vh;
-    }
-    .introsvg {
-        height: 20rem;
-        margin-top: 5rem;
-    }
-    .headerText {
-        font-size: xx-large;
-        font-family: cursive;
-        text-align: center;
-        padding: 0 5px 0 5px;
-    }
-    .headerSvg{
-        height: 3rem; 
-        margin: 3px -18px -154px 39px;
-        transform: scale(5);
-    }
-    .headerTitle {
-        font-size: xx-large;
-        font-family: cursive;
-        text-align: center;
-        padding: 25px 5px 0 5px;
-        color: #90B7F9;
-    }
-    .conatainerAbout {
-        height: 100%;
-        min-height: 100dvh;
-        display: flex;
-        background-color: #fff;
-        flex-direction: column;
-    }
-    .profileImg{
-        width: 100%;
-    }
-    .aboutme{
-        height: 100%;
-        list-style: none;
-        margin: 1rem 1rem 1rem 1rem;
-    }
-    .aboutmeitsme{
-        font-size: 12px;
-        font-family: "Roboto", sans-serif;
-        text-transform: uppercase;
-        letter-spacing: 1.5px;
-        margin-bottom: 0px;
-        font-weight: 600;
-    }
-    .aboutmeTitle{
-        margin-top: 0px;
-        font-size: xx-large;
-        font-weight: bold;
-        font-family: "Heebo", sans-serif;
-        line-height: 50px;
-        text-transform: uppercase;
-        margin-bottom: 0px;
-    }
-    .aboutmeDes{
-        text-align: justify;
-    }
+  .containerMain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 15px;
+    min-height: 100vh;
+  }
+  .introsvg {
+    height: 20rem;
+    margin-top: 5rem;
+  }
+  .headerText {
+    font-size: xx-large;
+    font-family: cursive;
+    text-align: center;
+    padding: 0 5px 0 5px;
+  }
+  .headerSvg {
+    height: 3rem;
+    margin: 3px -18px -154px 39px;
+    transform: scale(5);
+  }
+  .headerTitle {
+    font-size: xx-large;
+    font-family: cursive;
+    text-align: center;
+    padding: 25px 5px 0 5px;
+    color: #90b7f9;
+  }
+  .conatainerAbout {
+    height: 100%;
+    min-height: 100dvh;
+    display: flex;
+    background-color: #fff;
+    flex-direction: column;
+  }
+  .profileImg {
+    width: 100%;
+  }
+  .aboutme {
+    height: 100%;
+    list-style: none;
+    margin: 1rem 1rem 1rem 1rem;
+  }
+  .aboutmeitsme {
+    font-size: 12px;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 0px;
+    font-weight: 600;
+  }
+  .aboutmeTitle {
+    margin-top: 0px;
+    font-size: xx-large;
+    font-weight: bold;
+    font-family: "Heebo", sans-serif;
+    line-height: 50px;
+    text-transform: uppercase;
+    margin-bottom: 0px;
+  }
+  .aboutmeDes {
+    text-align: justify;
+  }
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-    .containerMain {
-        height: auto;
-        min-height: 100vh;
-        display: flex;
-        justify-content: flex-start;
-        flex-direction: column;
-        align-items: center;
-    }
-    .introsvg {
-        height: 35rem;
-        top: 100px;
-    }
-    .headerText {
-        font-size: -webkit-xxx-large;
-        font-family: cursive;
-    }
-    .headerTitle {
-        font-size: xx-large;
-        font-family: cursive;
-        text-align: center;
-        padding: 25px 5px 25px 5px;
-        color: #90B7F9;
-    }
-    .conatainerAbout {
-        height: 100%;
-        min-height: 100dvh;
-        display: flex;
-        background-color: #fff;
-        flex-direction: column;
-    }
-    .profileImg{
-        width: 100%;
-    }
-    .aboutme{
-        width: 100%;
-        height: 100%;
-        list-style: none;
-        margin: 1rem 1rem 1rem 1rem;
-    }
-    .aboutmeitsme{
-        font-size: 14px;
-        font-family: "Roboto", sans-serif;
-        text-transform: uppercase;
-        letter-spacing: 2.1px;
-        margin-bottom: 5px;
-        font-weight: 600;
-    }
-    .aboutmeTitle{
-        margin-top: 0px;
-        font-size: xx-large;
-        font-weight: bold;
-        font-family: "Heebo", sans-serif;
-        line-height: 54px;
-        text-transform: uppercase;
-        margin-bottom: 0px;
-    }
-    .aboutmeDes{
-        text-align: justify;
-    }
-    .toolBaralign{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-    }
-    .list {
-        list-style: none;
-        display: flex;
-        margin-right: 5rem;
-        flex-direction: row;
-        justify-content: flex-end;
-        margin-top: revert;
-        align-items: center;
-    }
-    .listItem {
-        /* margin: 0.5rem 1rem 0.5rem 1rem; */
-        margin-left: 1rem;
-        padding: 10px;
-        cursor: pointer;
-        font-family: math;
-        text-transform: uppercase;
-        transition: background-color 0.3s;
-        font-size: small;
-        text-align: center;
-    }
-    .listItem:hover{
-        background-color: #f9f9ff;
-        padding: 10px;
-        border-radius: 10px;
-    }
-    .listItemActive{
-        background-color: #f9f9ff;
-        padding: 10px;
-        border-radius: 10px;
-    }
+  .containerMain {
+    height: auto;
+    min-height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+  }
+  .introsvg {
+    height: 35rem;
+    top: 100px;
+  }
+  .headerText {
+    font-size: -webkit-xxx-large;
+    font-family: cursive;
+  }
+  .headerTitle {
+    font-size: xx-large;
+    font-family: cursive;
+    text-align: center;
+    padding: 25px 5px 25px 5px;
+    color: #90b7f9;
+  }
+  .conatainerAbout {
+    height: 100%;
+    min-height: 100dvh;
+    display: flex;
+    background-color: #fff;
+    flex-direction: column;
+  }
+  .profileImg {
+    width: 100%;
+  }
+  .aboutme {
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    margin: 1rem 1rem 1rem 1rem;
+  }
+  .aboutmeitsme {
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2.1px;
+    margin-bottom: 5px;
+    font-weight: 600;
+  }
+  .aboutmeTitle {
+    margin-top: 0px;
+    font-size: xx-large;
+    font-weight: bold;
+    font-family: "Heebo", sans-serif;
+    line-height: 54px;
+    text-transform: uppercase;
+    margin-bottom: 0px;
+  }
+  .aboutmeDes {
+    text-align: justify;
+  }
+  .toolBaralign {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .list {
+    list-style: none;
+    display: flex;
+    margin-right: 5rem;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: revert;
+    align-items: center;
+  }
+  .listItem {
+    /* margin: 0.5rem 1rem 0.5rem 1rem; */
+    margin-left: 1rem;
+    padding: 10px;
+    cursor: pointer;
+    font-family: math;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+    font-size: small;
+    text-align: center;
+  }
+  .listItem:hover {
+    background-color: #f9f9ff;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  .listItemActive {
+    background-color: #f9f9ff;
+    padding: 10px;
+    border-radius: 10px;
+  }
 }
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-    .containerMain {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: flex-start;
-        align-content: center;
-        justify-content: center;
-        flex-direction: row;
-        min-height: 100vh;
-        height: auto;
+  .containerMain {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: center;
+    justify-content: center;
+    flex-direction: row;
+    min-height: 100vh;
+    height: auto;
+  }
+  .introsvg {
+    height: 35rem;
+    top: 100px;
+  }
+  .headerText {
+    font-size: -webkit-xxx-large;
+    font-family: cursive;
+  }
+  .headerSvg {
+    height: 5rem;
+    margin: 103px 22px -154px 39px;
+    transform: scale(5);
+  }
+  .conatainerAbout {
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    background-color: #fff;
+    flex-direction: column;
+    align-items: center;
+  }
+  .profileImg {
+    width: 100%;
+  }
+  .aboutme {
+    width: 50%;
+    height: 100%;
+    list-style: none;
+    margin: 5rem 0rem 0rem 0rem;
+  }
+  .aboutmeitsme {
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2.1px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    margin-left: 0.5rem;
+  }
+  .aboutmeTitle {
+    margin-top: 0px;
+    font-size: xx-large;
+    font-weight: bold;
+    font-family: "Heebo", sans-serif;
+    line-height: 54px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    margin-left: 0.5rem;
+  }
+  .aboutmeDes {
+    text-align: justify;
+    margin-left: 0.5rem;
+  }
+  .timeLine {
+    height: 100% !important;
+    padding: 0 0.5rem 1rem 0.5rem !important;
+  }
+  .profilespilt {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    .aboutmeContent {
+      width: 65%;
     }
-    .introsvg {
-        height: 35rem;
-        top: 100px;
+    .timeLine {
+      width: 35%;
     }
-    .headerText {
-        font-size: -webkit-xxx-large;
-        font-family: cursive;
-    }
-    .headerSvg{
-        height: 5rem; 
-        margin: 103px 22px -154px 39px; 
-        transform: scale(5);
-    }
-    .conatainerAbout {
-        height: 100%;
-        min-height: 100vh;
-        display: flex;
-        background-color: #fff;
-        flex-direction: column;
-        align-items: center;
-    }
-    .profileImg{
-        width: 100%;
-    }
-    .aboutme{
-        width: 50%;
-        height: 100%;
-        list-style: none;
-        margin: 5rem 0rem 0rem 0rem;
-    }
-    .aboutmeitsme{
-        font-size: 14px;
-        font-family: "Roboto", sans-serif;
-        text-transform: uppercase;
-        letter-spacing: 2.1px;
-        margin-bottom: 20px;
-        font-weight: 600;
-        margin-left: 0.5rem;
-    }
-    .aboutmeTitle{
-        margin-top: 0px;
-        font-size: xx-large;
-        font-weight: bold;
-        font-family: "Heebo", sans-serif;
-        line-height: 54px;
-        text-transform: uppercase;
-        margin-bottom: 20px;
-        margin-left: 0.5rem;
-    }
-    .aboutmeDes{
-        text-align: justify;
-        margin-left: 0.5rem;
-    }
-    .timeLine{
-        height: 100% !important;
-        padding: 0 0.5rem 1rem 0.5rem !important;
-    }
-    .profilespilt{
-        list-style: none;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: flex-start;
-        .aboutmeContent{
-            width: 65%;
-        }
-        .timeLine{
-            width: 35%;
-        }
-    }
+  }
 }
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-    .containerMain {
-        display: flex;
-        flex-direction: row;
-        height: auto;
-        align-items: center;
-        justify-content: center;
-        align-content: center;
-        flex-wrap: wrap;
+  .containerMain {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+  }
+  .introsvg {
+    height: 35rem;
+    top: 100px;
+  }
+  .headerText {
+    font-size: -webkit-xxx-large;
+    font-family: cursive;
+  }
+  .headerSvg {
+    height: 5rem;
+    margin: 103px 22px -154px 39px;
+    transform: scale(5);
+  }
+  .conatainerAbout {
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    background-color: #fff;
+    flex-direction: column;
+    align-items: center;
+  }
+  .profileImg {
+    width: 100%;
+  }
+  .aboutme {
+    width: 50%;
+    height: 100%;
+    list-style: none;
+    margin: 5rem 0rem 0rem 0rem;
+  }
+  .aboutmeitsme {
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2.1px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    margin-left: 0.5rem;
+  }
+  .aboutmeTitle {
+    margin-top: 0px;
+    font-size: xx-large;
+    font-weight: bold;
+    font-family: "Heebo", sans-serif;
+    line-height: 54px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    margin-left: 0.5rem;
+  }
+  .aboutmeDes {
+    text-align: justify;
+    margin-left: 0.5rem;
+  }
+  .timeLine {
+    height: 100% !important;
+    padding: 0 0.5rem 1rem 0.5rem !important;
+  }
+  .profilespilt {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    .aboutmeContent {
+      width: 65%;
     }
-    .introsvg {
-        height: 35rem;
-        top: 100px;
+    .timeLine {
+      width: 35%;
     }
-    .headerText {
-        font-size: -webkit-xxx-large;
-        font-family: cursive;
-    }
-    .headerSvg{
-        height: 5rem; 
-        margin: 103px 22px -154px 39px; 
-        transform: scale(5);
-    }
-    .conatainerAbout {
-        height: 100%;
-        min-height: 100vh;
-        display: flex;
-        background-color: #fff;
-        flex-direction: column;
-        align-items: center;
-    }
-    .profileImg{
-        width: 100%;
-    }
-    .aboutme{
-        width: 50%;
-        height: 100%;
-        list-style: none;
-        margin: 5rem 0rem 0rem 0rem;
-    }
-    .aboutmeitsme{
-        font-size: 14px;
-        font-family: "Roboto", sans-serif;
-        text-transform: uppercase;
-        letter-spacing: 2.1px;
-        margin-bottom: 20px;
-        font-weight: 600;
-        margin-left: 0.5rem;
-    }
-    .aboutmeTitle{
-        margin-top: 0px;
-        font-size: xx-large;
-        font-weight: bold;
-        font-family: "Heebo", sans-serif;
-        line-height: 54px;
-        text-transform: uppercase;
-        margin-bottom: 20px;
-        margin-left: 0.5rem;
-    }
-    .aboutmeDes{
-        text-align: justify;
-        margin-left: 0.5rem;
-    }
-    .timeLine{
-        height: 100% !important;
-        padding: 0 0.5rem 1rem 0.5rem !important;
-    }
-    .profilespilt{
-        list-style: none;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: flex-start;
-        .aboutmeContent{
-            width: 65%;
-        }
-        .timeLine{
-            width: 35%;
-        }
-    }
+  }
 }
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-    .containerMain {
-        display: flex;
-        flex-direction: row;
-        height: auto;
-        align-items: center;
-        justify-content: center;
-        align-content: center;
-        flex-wrap: wrap;
+  .containerMain {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+  }
+  .introsvg {
+    height: 35rem;
+    top: 100px;
+  }
+  .headerText {
+    font-size: -webkit-xxx-large;
+    font-family: cursive;
+  }
+  .headerSvg {
+    height: 5rem;
+    margin: 103px 22px -154px 39px;
+    transform: scale(5);
+  }
+  .conatainerAbout {
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    background-color: #fff;
+    flex-direction: column;
+    align-items: center;
+  }
+  .profileImg {
+    width: 100%;
+    /* margin: 5rem 0rem 0rem 0rem;; */
+  }
+  .aboutme {
+    width: 50%;
+    height: 100%;
+    list-style: none;
+    margin: 5rem 0rem 0rem 0rem;
+  }
+  .aboutmeitsme {
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2.1px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    margin-left: 0.5rem;
+  }
+  .aboutmeTitle {
+    margin-top: 0px;
+    font-size: xx-large;
+    font-weight: bold;
+    font-family: "Heebo", sans-serif;
+    line-height: 54px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    margin-left: 0.5rem;
+  }
+  .aboutmeDes {
+    text-align: justify;
+    margin-left: 0.5rem;
+  }
+  .timeLine {
+    height: 100% !important;
+    padding: 0 0.5rem 1rem 0.5rem !important;
+  }
+  .profilespilt {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    .timeLine {
+      width: 35%;
+      margin: 5rem 0 0 1rem;
     }
-    .introsvg {
-        height: 35rem;
-        top: 100px;
-    }
-    .headerText {
-        font-size: -webkit-xxx-large;
-        font-family: cursive;
-    }
-    .headerSvg{
-        height: 5rem; 
-        margin: 103px 22px -154px 39px; 
-        transform: scale(5);
-    }
-    .conatainerAbout {
-        height: 100%;
-        min-height: 100vh;
-        display: flex;
-        background-color: #fff;
-        flex-direction: column;
-        align-items: center;
-    }
-    .profileImg{
-        width: 100%;
-        /* margin: 5rem 0rem 0rem 0rem;; */
-    }
-    .aboutme{
-        width: 50%;
-        height: 100%;
-        list-style: none;
-        margin: 5rem 0rem 0rem 0rem;
-    }
-    .aboutmeitsme{
-        font-size: 14px;
-        font-family: "Roboto", sans-serif;
-        text-transform: uppercase;
-        letter-spacing: 2.1px;
-        margin-bottom: 20px;
-        font-weight: 600;
-        margin-left: 0.5rem;
-    }
-    .aboutmeTitle{
-        margin-top: 0px;
-        font-size: xx-large;
-        font-weight: bold;
-        font-family: "Heebo", sans-serif;
-        line-height: 54px;
-        text-transform: uppercase;
-        margin-bottom: 20px;
-        margin-left: 0.5rem;
-    }
-    .aboutmeDes{
-        text-align: justify;
-        margin-left: 0.5rem;
-    }
-    .timeLine{
-        height: 100% !important;
-        padding: 0 0.5rem 1rem 0.5rem !important;
-    }
-    .profilespilt{
-        list-style: none;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: flex-start;
-        .aboutmeContent{
-            width: 65%;
-        }
-        .timeLine{
-            width: 35%;
-        }
-        margin: 0 25px 0 25px;
-    }
+    margin: 0 25px 0 25px;
+  }
+  .aboutmeContent {
+    padding: 1rem;
+    margin: 0 7rem 2rem 7rem;
+  }
 }
 
-  .carousel {
-    position: relative;
-  }
-  
-  .carousel-inner {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-  }
-  
-  .carousel-item {
-    flex: 1 0 75%; /* Adjust the width of each card item */
-    padding: 10px;
-    scroll-snap-align: start;
-  }
-  
-  .carousel-control-prev,
-  .carousel-control-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #fff;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 50%;
-    padding: 10px;
-    transition: background 0.3s;
-  }
-  
-  .carousel-control-prev-icon,
-  .carousel-control-next-icon {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-  
-  .carousel-control-prev {
-    left: 10px;
-  }
-  
-  .carousel-control-next {
-    right: 10px;
-  }
-  
-  .carousel-control-prev:hover,
-  .carousel-control-next:hover {
-    background: rgba(0, 0, 0, 0.8);
-  }
-  
-.timeLine{
+.carousel {
+  position: relative;
+}
+
+.carousel-inner {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.carousel-item {
+  flex: 1 0 75%; /* Adjust the width of each card item */
+  padding: 10px;
+  scroll-snap-align: start;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  padding: 10px;
+  transition: background 0.3s;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.carousel-control-prev {
+  left: 10px;
+}
+
+.carousel-control-next {
+  right: 10px;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.timeLine {
   margin-top: 1rem;
 }
-.contactme{
-    min-height: 100vh;
-    background-color: #fff;
+.contactme {
+  background-color: #152e52;
 }
-
- 
+.dataCount {
+  margin: 2px 3px 0 0;
+  display: flex;
+}
